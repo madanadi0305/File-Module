@@ -1,0 +1,474 @@
+image: node:latest
+
+cache:
+   paths:
+       - node_modules/
+
+Test:
+    script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test
+    only:
+        refs:
+            - master
+Test01:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test01
+  only:
+    refs:
+      - 1-task01-javascript-program-that-contains-a-function-that-takes-three-parameters
+
+Practice01:
+  script:
+      - node practice01.js
+  only:
+    refs:
+      - 1-task01-javascript-program-that-contains-a-function-that-takes-three-parameters
+
+Test02:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test02
+  only:
+    refs:
+      - 2-task02-javascript-program-that-contains-a-function-which-takes-one-parameter
+
+Practice02:
+  script:
+      - node practice02.js
+  only:
+    refs:
+      - 2-task02-javascript-program-that-contains-a-function-which-takes-one-parameter
+
+Test03:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test03
+  only:
+    refs:
+      - 3-task03-javascript-program-to-calculate-the-stats-of-the-file
+
+Practice03:
+  script:
+      - node practice03.js
+  only:
+    refs:
+      - 3-task03-javascript-program-to-calculate-the-stats-of-the-file
+
+Test04:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test04
+  only:
+    refs:
+      - 4-task04-javascript-program-to-check-whether-the-file-exists-or-not
+
+Practice04:
+  script:
+      - node practice04.js
+  only:
+    refs:
+      - 4-task04-javascript-program-to-check-whether-the-file-exists-or-not
+
+Test05:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test05
+  only:
+    refs:
+      - 5-task05-javascript-program-to-fetch-files-from-a-directory
+
+Practice05:
+  script:
+      - node practice05.js
+  only:
+    refs:
+      - 5-task05-javascript-program-to-fetch-files-from-a-directory
+
+      
+Test06:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test06
+  only:
+    refs:
+      - 6-task06-javascript-program-to-fetch-files-from-a-directory-and-return-object
+
+Practice06:
+  script:
+      - node practice06.js
+  only:
+    refs:
+      - 6-task06-javascript-program-to-fetch-files-from-a-directory-and-return-object
+
+      
+Test07:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test07
+  only:
+    refs:
+      - 7-task07-javascript-program-to-fetch-files-from-a-directory-and-return-object-with-some-data
+
+Practice07:
+  script:
+      - node practice07.js
+  only:
+    refs:
+      - 7-task07-javascript-program-to-fetch-files-from-a-directory-and-return-object-with-some-data
+
+      
+Test08:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test08
+  only:
+    refs:
+      - 8-task08-javascript-program-to-fetch-files-from-a-directory-and-rerturn-files
+
+Practice08:
+  script:
+      - node practice08.js
+  only:
+    refs:
+      - 8-task08-javascript-program-to-fetch-files-from-a-directory-and-rerturn-files
+
+      
+Test09:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test09
+  only:
+    refs:
+      - 9-task09-javascript-program-to-fetch-files-from-a-directory-and-return-count
+
+Practice09:
+  script:
+      - node practice09.js
+  only:
+    refs:
+      - 9-task09-javascript-program-to-fetch-files-from-a-directory-and-return-count
+
+Test10:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test10
+  only:
+    refs:
+      - 10-task10javascript-program-that-fetches-data-from-a-file-and-return-file-content
+
+Practice10:
+  script:
+      - node practice10.js
+  only:
+    refs:
+      - 10-task10javascript-program-that-fetches-data-from-a-file-and-return-file-content
+
+      
+Test11:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test11
+  only:
+    refs:
+      - 11-task11-javascript-program-that-fetches-data-from-a-file-and-perform-action-on-some-conditions
+
+Practice11:
+  script:
+      - node practice11.js
+  only:
+    refs:
+      - 11-task11-javascript-program-that-fetches-data-from-a-file-and-perform-action-on-some-conditions
+
+      
+Test12:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test12
+  only:
+    refs:
+      - 12-task12-javascript-program-that-fetches-data-from-a-file-and-return-required-file-content
+
+Practice12:
+  script:
+      - node practice12.js
+  only:
+    refs:
+      - 12-task12-javascript-program-that-fetches-data-from-a-file-and-return-required-file-content
+
+      
+Test13:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test13
+  only:
+    refs:
+      - 13-task13-javascript-program-that-fetches-data-from-a-file-and-return-object
+
+Practice13:
+  script:
+      - node practice13.js
+  only:
+    refs:
+      - 13-task13-javascript-program-that-fetches-data-from-a-file-and-return-object
+
+      
+Test14:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test14
+  only:
+    refs:
+      - 14-task14-javascript-program-that-fetches-data-from-a-file-and-return-object-with-counting
+
+Practice14:
+  script:
+      - node practice14.js
+  only:
+    refs:
+      - 14-task14-javascript-program-that-fetches-data-from-a-file-and-return-object-with-counting
+
+
+Test15:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test15
+  only:
+    refs:
+      - 15-task15-javascript-program-that-writes-data-to-a-file
+
+Practice15:
+  script:
+      - node practice15.js
+  only:
+    refs:
+      - 15-task15-javascript-program-that-writes-data-to-a-file
+
+      
+Test16:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test16
+  only:
+    refs:
+      - 16-task16-javascript-program-that-writes-data-to-a-file-if-file-does-not-exist
+
+Practice16:
+  script:
+      - node practice16.js
+  only:
+    refs:
+      - 16-task16-javascript-program-that-writes-data-to-a-file-if-file-does-not-exist
+
+      
+Test17:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test17
+  only:
+    refs:
+      - 17-task17-javascript-program-that-appends-data-to-a-file
+
+Practice17:
+  script:
+      - node practice17.js
+  only:
+    refs:
+      - 17-task17-javascript-program-that-appends-data-to-a-file
+
+      
+Test18:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test18
+  only:
+    refs:
+      - 18-task18-javascript-program-that-appends-data-to-a-file-in-some-conditions
+
+Practice18:
+  script:
+      - node practice18.js
+  only:
+    refs:
+      - 18-task18-javascript-program-that-appends-data-to-a-file-in-some-conditions
+      
+Test19:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
+        - npm install
+        - npm run test19
+  only:
+    refs:
+      - 19-task19-javascript-program-that-copies-the-content-of-one-file-to-another-file
+Practice19:
+  script:
+      - git config --global user.email "jindal.swapnil2@gmail.com"
+      - git config --global user.name "Swapnil"
+      - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
+      - node practice19.js
+  only:
+    refs:
+      - 19-task19-javascript-program-that-copies-the-content-of-one-file-to-another-file
+
+Test20:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
+        - npm install
+        - npm run test20
+  only:
+    refs:
+      - 20-task20-javascript-program-that-append-the-content-to-a-file
+Practice20:
+  script:
+      - git config --global user.email "jindal.swapnil2@gmail.com"
+      - git config --global user.name "Swapnil"
+      - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
+      - node practice20.js
+  only:
+    refs:
+      - 20-task20-javascript-program-that-append-the-content-to-a-file
+
+Test21:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test21
+  only:
+    refs:
+      - 21-task21-javascript-program-to-make-directory
+Practice21:
+  script:
+      - node practice21.js
+  only:
+    refs:
+      - 21-task21-javascript-program-to-make-directory
+
+
+Test22:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
+        - npm install
+        - npm run test22
+  only:
+    refs:
+      - 22-task22-javascript-program-that-deletes-a-directory
+Practice22:
+  script:
+      - git config --global user.email "jindal.swapnil2@gmail.com"
+      - git config --global user.name "Swapnil"
+      - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
+      - node practice22.js
+  only:
+    refs:
+      - 22-task22-javascript-program-that-deletes-a-directory
+
+Test23:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
+        - git checkout 21-task21-javascript-program-to-make-directory task21.js
+        - git checkout 22-task22-javascript-program-that-deletes-a-directory task22.js
+        - npm install
+        - npm run test23
+  only:
+    refs:
+      - 23-task23-javascript-program-that-deletes-a-directory-by-using-previous-tasks
+Practice23:
+  script:
+      - git config --global user.email "jindal.swapnil2@gmail.com"
+      - git config --global user.name "Swapnil"
+      - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
+      - git checkout 21-task21-javascript-program-to-make-directory task21.js
+      - git checkout 22-task22-javascript-program-that-deletes-a-directory task22.js
+      - node practice23.js
+  only:
+    refs:
+      - 23-task23-javascript-program-that-deletes-a-directory-by-using-previous-tasks
+
+Test24:
+  script:
+        - git config --global user.email "jindal.swapnil2@gmail.com"
+        - git config --global user.name "Swapnil"
+        - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+        - npm install
+        - npm run test24
+  only:
+    refs:
+      - 24-task24-javascript-program-that-deletes-a-file
+Practice24:
+  script:
+      - node practice24.js
+  only:
+    refs:
+      - 24-task24-javascript-program-that-deletes-a-file
