@@ -355,7 +355,6 @@ Test19:
         - git config --global user.email "jindal.swapnil2@gmail.com"
         - git config --global user.name "Swapnil"
         - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
-        - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
         - npm install
         - npm run test19
   only:
@@ -363,9 +362,6 @@ Test19:
       - 19-task19-javascript-program-that-copies-the-content-of-one-file-to-another-file
 Practice19:
   script:
-      - git config --global user.email "jindal.swapnil2@gmail.com"
-      - git config --global user.name "Swapnil"
-      - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
       - node practice19.js
   only:
     refs:
@@ -376,7 +372,6 @@ Test20:
         - git config --global user.email "jindal.swapnil2@gmail.com"
         - git config --global user.name "Swapnil"
         - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
-        - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
         - npm install
         - npm run test20
   only:
@@ -384,9 +379,6 @@ Test20:
       - 20-task20-javascript-program-that-append-the-content-to-a-file
 Practice20:
   script:
-      - git config --global user.email "jindal.swapnil2@gmail.com"
-      - git config --global user.name "Swapnil"
-      - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
       - node practice20.js
   only:
     refs:
@@ -415,7 +407,6 @@ Test22:
         - git config --global user.email "jindal.swapnil2@gmail.com"
         - git config --global user.name "Swapnil"
         - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
-        - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
         - npm install
         - npm run test22
   only:
@@ -423,9 +414,6 @@ Test22:
       - 22-task22-javascript-program-that-deletes-a-directory
 Practice22:
   script:
-      - git config --global user.email "jindal.swapnil2@gmail.com"
-      - git config --global user.name "Swapnil"
-      - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
       - node practice22.js
   only:
     refs:
@@ -436,9 +424,6 @@ Test23:
         - git config --global user.email "jindal.swapnil2@gmail.com"
         - git config --global user.name "Swapnil"
         - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
-        - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
-        - git checkout 21-task21-javascript-program-to-make-directory task21.js
-        - git checkout 22-task22-javascript-program-that-deletes-a-directory task22.js
         - npm install
         - npm run test23
   only:
@@ -446,11 +431,6 @@ Test23:
       - 23-task23-javascript-program-that-deletes-a-directory-by-using-previous-tasks
 Practice23:
   script:
-      - git config --global user.email "jindal.swapnil2@gmail.com"
-      - git config --global user.name "Swapnil"
-      - git checkout 4-task04-javascript-program-to-check-whether-the-file-exists-or-not task04.js
-      - git checkout 21-task21-javascript-program-to-make-directory task21.js
-      - git checkout 22-task22-javascript-program-that-deletes-a-directory task22.js
       - node practice23.js
   only:
     refs:
