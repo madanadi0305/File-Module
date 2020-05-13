@@ -1,7 +1,7 @@
 const fs = require("fs")
-const path = require("path")
+const destinationFile = require("./task04")
 
-const destinationFile = path.join(__dirname, "task04.js");
+// const destinationFile = path.join(__dirname, "task04.js");
 
 
 async function copy(sourceFile, destinationFile) {
@@ -13,7 +13,6 @@ async function copy(sourceFile, destinationFile) {
 }
 
 function out(source, destinationFile) {
-    destinationFile =destinationFile
     return new Promise((resolve, reject) => {
         fs.access(destinationFile, async (err) => {
             if (err) {
