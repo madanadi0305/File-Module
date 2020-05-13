@@ -1,5 +1,5 @@
 const fs = require("fs")
-const destinationFile = require("./task04.js")
+const destinationFile = require("./task04")
 
 async function copy(sourceFile, destinationFile) {
     return new Promise((resolve, reject) => {
