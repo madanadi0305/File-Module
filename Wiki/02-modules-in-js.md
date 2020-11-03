@@ -1,11 +1,13 @@
 # Modules in Javascript
 
 Good authors divide their books into chapters and sections; good programmers divide their programs into modules. 
-JavaScript modules are reusable pieces of code that can be exported from one program and imported for use in another program.
+JavaScript modules are reusable pieces of code that can be exported from one program and imported for use
+ in another program.
 There are the following types of modules in Node.js:
 
 **Core Modules** – While working with NodeJS, there are some sections of code that have
-to be written again and again in every application. Hence, instead of writing the same code repeatedly, developers can
+to be written again and again in every application. Hence, instead of writing the same code repeatedly, 
+developers can
 use the core modules (ready to use functions) which come pre-built with NodeJS
 These are the ones that come pre-compiled with the Node.js
 library. Some common core modules are HTTP, URL, EVENTS,
@@ -13,7 +15,8 @@ FILE SYSTEM, etc.
 
 
 **User-Defined Modules**  – User-defined modules are the ones that a
-developer makes for a specific purpose in his/her application. These are required when the core modules are not capable of fulfilling the desired functionality.
+developer makes for a specific purpose in his/her application. 
+These are required when the core modules are not capable of fulfilling the desired functionality.
 
 **Third Party Modules** - There are some modules which are created by others
 but can be used by developers in their own applications.
