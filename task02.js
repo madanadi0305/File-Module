@@ -7,7 +7,7 @@ if(err){
 reject('Error occured while calculating stats');
 }
 else{
- var size=stat.size;   
+ var size=stats.size;   
 resolve(size);
 
 }
