@@ -8,8 +8,8 @@ if(err){
     rej('Error opening file stats');
 }
 else{
-fileStats.birthTime=stats.birthtimeMs;
-fileStats.modifiedTime=stats.mtimeMs;
+fileStats.birthTime=stats.birthtime;
+fileStats.modifiedTime=stats.mtime;
 fileStats.size=stats.size;
 if(stats.isFile()){
   fileStats.type='file';  
