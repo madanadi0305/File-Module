@@ -2,9 +2,10 @@ const path=require('path');
 const fs=require('fs');
 function fileStats(pathToFile){
 var fileStats={};
+return new Promise((res,rej)=>{
 fs.stat(pathToFile,(err,stats)=>{
 if(err){
-    console.log('Error opening file stats');
+    rej('Error opening file stats');
 }
 else{
 fileStats.birthTime=stats.birthtimeMs;
@@ -16,9 +17,14 @@ if(stats.isFile()){
 else{
     fileStats.type='directory';
 }
-
+res(fileStats);
 }
 });
-return fileStats;
+//return fileStats;
+
+
+
+});
+
 }
 module.exports=fileStats;
