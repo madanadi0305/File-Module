@@ -8,7 +8,7 @@ return new Promise((res,rej)=>{
    res('File exists');   
   } 
   else{
-   rej('File does not exist');  
+   rej('File does not exists');  
   }  
  });   
 });  
