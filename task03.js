@@ -8,14 +8,14 @@ if(err){
     rej('Error occured while calculating stats');
 }
 else{
-fileStats.birthtime=stats.birthtime;
-fileStats.modifiedtime=stats.mtime;
+fileStats.birthTime=stats.birthtimeMs;
+fileStats.modifiedTime=stats.mtimeMs;
 fileStats.size=stats.size;
 if(stats.isFile()){
-  fileStats.type='file';  
+  fileStats.type=true;  
 }
 else{
-    fileStats.type='directory';
+    fileStats.type=false;
 }
 res(fileStats);
 }
