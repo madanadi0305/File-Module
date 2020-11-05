@@ -12,8 +12,11 @@ else{
     
 for(var i=0;i<files.length;i++){
 var fileElem=files[i];
-//var fileNameArray=fileElem.split('');
+
 fs.stat(fileElem,(err,stats)=>{
+if(err){return 0;}
+
+
 if(stats.isDirectory()){
     countDir=countDir+1;
 }
