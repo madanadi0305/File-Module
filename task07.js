@@ -11,14 +11,22 @@ else{
     var fileObj={};
 for(var i=0;i<files.length;i++){
 var fileElem=files[i];
-var fileNameArray=fileElem.split('');
-for(var i=0;i<fileNameArray.length;i++){
-    if(String(fileNameArray[i])==='.'){
+//var fileNameArray=fileElem.split('');
+fs.stat(fileElem,(err,stats)=>{
+if(err){
+    throw err;
+}
+else{
+    if(stats.isFile(fileElem)){
         countFile=countFile+1;
     }
-    
+    else{
+        countDir=countDir+1;
+    }
 }
-countDir=countDir+1;
+
+});
+//countDir=countDir+1;
 }
    
 fileObj.countDir=countDir;
