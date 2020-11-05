@@ -12,20 +12,13 @@ else{
     
 for(var i=0;i<files.length;i++){
 var fileElem=files[i];
-
-fs.stat(fileElem,(err,fileElem)=>{
-if(err){return 0;}
-
-
-if(fileElem.isDirectory()){
-    countDir=countDir+1;
-}
-if(!fileElem.isDirectory()){
+if(fileElem.includes(".")){
     countFile=countFile+1;
 }
+else{
+   countDir=countDir+1; 
+}
 
-});
-//countDir=countDir+1;
 }
    
 fileObj.countDir=countDir;
