@@ -9,7 +9,7 @@ if(err){
 }
 else{
 fileStats.birthTime=stats.birthtime;
-fileStats.modifiedTime=stats.mtime;
+fileStats.modifiedTime=stats.modifiedtime;
 fileStats.size=stats.size;
 if(stats.isFile()){
   fileStats.type='file';  
