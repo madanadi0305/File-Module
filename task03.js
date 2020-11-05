@@ -12,10 +12,10 @@ fileStats.birthTime=stats.birthtimeMs;
 fileStats.modifiedTime=stats.mtimeMs;
 fileStats.size=stats.size;
 if(stats.isFile()){
-  fileStats.type=true;  
+  fileStats.type='File';  
 }
 else{
-    fileStats.type=false;
+    fileStats.type='Directory';
 }
 res(fileStats);
 }
