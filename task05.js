@@ -5,7 +5,9 @@ var finalDirectoryPath=path.dirname(dirPath);
 return new Promise((res,rej)=>{
 fs.readdir(finalDirectoryPath,(error,files)=>{
 if(error){
-    rej("Error occured while reading directory");
+    error="Error occured while reading directory";
+    //rej("Error occured while reading directory");
+    throw error;
 }
 else{
     res(files);
