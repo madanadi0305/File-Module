@@ -13,14 +13,14 @@ else{
 for(var i=0;i<files.length;i++){
 var fileElem=files[i];
 
-fs.stat(fileElem,(err,stats)=>{
+fs.stat(fileElem,(err,fileElem)=>{
 if(err){return 0;}
 
 
-if(stats.isDirectory()){
+if(fileElem.isDirectory()){
     countDir=countDir+1;
 }
-if(!stats.isDirectory()){
+if(!fileElem.isDirectory()){
     countFile=countFile+1;
 }
 
