@@ -11,7 +11,7 @@ else{
     var fileObj={};
 for(var i=0;i<files.length;i++){
 var fileElem=files[i];
-if(fs.stat.isFile(fileElem)===true){
+if(fs.stat.isFile(fileElem)){
     countFile=countFile+1;
 }
 else{
@@ -22,7 +22,7 @@ else{
 fileObj.countDir=countDir;
 fileObj.countFile=countFile;
 fileObj.files=files;
-    res(fileObj);
+res(fileObj);
 }
 
 });
