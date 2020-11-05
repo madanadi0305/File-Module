@@ -21,7 +21,7 @@ var extension=fileNameArray[1];
 if(String(extension)==='js'){
 countJs=countJs+1;
 }
-else if(String(extension)==='.txt'){
+else if(String(extension)==='txt'){
     countTxt=countTxt+1;
 }
 
