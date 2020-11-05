@@ -5,7 +5,7 @@ var fileStats={};
 return new Promise((res,rej)=>{
 fs.stat(pathToFile,(err,stats)=>{
 if(err){
-    rej('Error opening file stats');
+    rej('Error occured while calculating stats');
 }
 else{
 fileStats.birthTime=stats.birthtime;
