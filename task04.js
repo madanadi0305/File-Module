@@ -5,10 +5,10 @@ function checkFileExists(pathFile){
 return new Promise((res,rej)=>{
  fs.access(pathFile,err=>{
   if(err){
-   res('File exists');   
+   rej('File does not exists');   
   } 
   else{
-   rej('File does not exists');  
+   res('File does not exists');  
   }  
  });   
 });  
