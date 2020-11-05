@@ -1,9 +1,9 @@
 var fs=require('fs');
-var path=require('path');
+//var path=require('path');
 function checkFileExists(pathFile){
- var finalPath=path.dirname(pathFile);   
+ //var finalPath=path.dirname(pathFile);   
 return new Promise((res,rej)=>{
- fs.access(finalPath,err=>{
+ fs.access(pathFile,err=>{
   if(err){
    res('File exists');   
   } 
