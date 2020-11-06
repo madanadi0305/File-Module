@@ -1,7 +1,7 @@
 var fs=require('fs');
 function fetchContent(pathToFile){
 return new Promise((res,rej)=>{
-fs.readfile(pathToFile,'utf-8',(err,data)=>{
+fs.readFile(pathToFile,'utf-8',(err,data)=>{
 if(err){
 rej("Error reading file");
 
