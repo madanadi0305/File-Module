@@ -10,13 +10,15 @@ if(err){
 }
 else{
 pathContents.forEach(element=>{
-var stats=fs.statSync(element.toString());
-if(stats.isFile()){
-    countFile=countFile+1;
-}
-else{
+fs.stat(element,(err,stats)=>{
+if(stats.isDirectory()){
     countDir=countDir+1;
 }
+else{
+    countFile=countFile+1;
+}
+
+});
 });    
 
    
