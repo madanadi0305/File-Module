@@ -12,7 +12,7 @@ else{
     
 for(var i=0;i<files.length;i++){
 var fileElem=files[i];
-if(fileElem.includes(".")){
+if(String(fileElem.includes("."))===true){
     countFile=countFile+1;
 }
 else{
