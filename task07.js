@@ -6,9 +6,9 @@ if(error){
     rej("Error occured while reading directory");
 }
 else{
-    var countDir=0;
-    var countFile=0;
- var fetchObj={};   
+var countDir=0;
+var countFile=0;
+var fetchObj={};   
 for(var i=0;i<files.length;i++){
 var pathElem=files[i].toString();
 if(pathElem.includes(".")){
@@ -29,3 +29,4 @@ res(fetchObj);
 });
 
 }
+module.export=countDirAndFiles;
