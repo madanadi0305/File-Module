@@ -5,7 +5,7 @@ return new Promise((res,rej)=>{
 fs.rmdir(pathToDirectory,error=>{
 var checkExist=existOrNot.checkFileExists(pathToDirectory);    
 if(error){
-if(checkExist){    
+if(!checkExist){    
 rej('cannot remove directory because : File does not exists')
 }
 }
