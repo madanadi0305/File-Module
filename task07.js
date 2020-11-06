@@ -9,26 +9,16 @@ if(err){
     rej("Error occured while reading directory");
 }
 else{
-    
-for(var i=0;i<pathContents.length;i++){
-var pathElem=pathContents[i];
-fs.stat(pathElem,(err,stats)=>{
-if(err){
-    throw err;
+pathContents.forEach(element=>{
+var stats=fs.statSync(element.toString());
+if(stats.isFile()){
+    countFile=countFile+1;
 }
 else{
-    if(stats.isFile()===true){
-        countFile=countFile+1;
-    }
-    else 
-    {
-        countDir=countDir+1;
-    }
+    countDir=countDir+1;
 }
+});    
 
-});
-
-}
    
 fileObj.countDir=countDir;
 fileObj.countFile=countFile;
