@@ -11,12 +11,12 @@ var countFile=0;
 var fetchObj={};   
 for(var i=0;i<files.length;i++){
 var pathElem=files[i].toString();
-if(pathElem.includes(".")){
-    countFile=countFile+1;
-}
-else{
-    countDir=countDir+1;
-}
+fs.stat(pathElem,(error,stats)=>{
+console.log(stats);
+
+});
+
+
 }
 fetchObj.countDir=countDir;
 fetchObj.countFile=countFile;
