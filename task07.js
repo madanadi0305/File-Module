@@ -9,22 +9,17 @@ if(err){
     rej("Error occured while reading directory");
 }
 else{
-pathContents.forEach(element=>{
-fs.stat(element,(err,stats)=>{
-if(stats.isDirectory()){
-    countDir=countDir+1;
+for(var i=0;i<pathContents.length;i++){
+var pathElem=pathContents[i];
+var countOfPath=checkFileOrDirectory(pathElem);
+countDir=countDir+countOfPath.dirCount;
+countFile=countFile+countOfPath.fileCount;
 }
-else{
-    countFile=countFile+1;
-}
-
-});
-});    
 
    
 fileObj.countDir=countDir;
 fileObj.countFile=countFile;
-fileObj.files=files;
+fileObj.files=pathContents;
 res(fileObj);
 }
 
@@ -33,4 +28,29 @@ res(fileObj);
 });
 
 
+}
+
+function checkFileOrDirectory(pathToDirectory){
+var dirCount=0;
+var fileCount=0;
+var countObj={};
+//return new Promise((res,rej)=>{
+fs.stat(pathToDirectory,(err,stats)=>{
+    if(err){
+        console.log(err.message);
+    }
+    else{
+   if(stats.isFile()){
+   fileCount=fileCount+1;
+   }
+       else{
+           dirCount=dirCount+1;
+       }
+
+    }
+});
+countObj.dirCount=dirCount;
+countObj.fileCount=fileCount;
+//});
+return countObj;
 }
