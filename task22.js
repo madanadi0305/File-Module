@@ -8,12 +8,12 @@ if(error){
 if(checkExist===true){    
 rej('cannot remove directory because : File does not exists')
 }
-}
+
 else{
 res('File exists : Directory removed');
 
 }
-
+}
 });
 
 
