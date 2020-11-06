@@ -12,7 +12,13 @@ var fetchObj={};
 for(var i=0;i<files.length;i++){
 var pathElem=files[i].toString();
 fs.stat(pathElem,(error,stats)=>{
-console.log(stats);
+//console.log(stats);
+if(stats.isFile()){
+    countFile=countFile+1;
+}
+else{
+    countDir=countDir+1;
+}
 
 });
 
