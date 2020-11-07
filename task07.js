@@ -11,17 +11,19 @@ var countFile=0;
 var fetchObj={};   
 for(var i=0;i<files.length;i++){
 var pathElem=files[i].toString();
-fs.stat(pathElem,(error,stats)=>{
-//console.log(stats);
+var pathName=pathToDirectory+"/"+pathElem;
+fs.stat(pathName,(err,stats)=>{
 if(stats.isFile()){
-    countFile=countFile+1;
+countFile=countFile+1;
+
 }
+
 else{
-    countDir=countDir+1;
+countDir=countDir+1;
+
 }
 
-});
-
+})
 
 }
 fetchObj.countDir=countDir;
