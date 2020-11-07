@@ -5,32 +5,26 @@ fs.readdir(pathToDirectory,(error,files)=>{
 if(error){
     rej("Error occured while reading directory");
 }
-else{
+
 var countDir=0;
 var countFile=0;
-var fetchObj={};   
+var filesObj={};
 for(var i=0;i<files.length;i++){
-var pathElem=files[i].toString();
-var pathName=pathToDirectory+"/"+pathElem;
-fs.stat(pathName,(err,stats)=>{
-if(stats.isFile()){
+if(files[i].includes('.')){
 countFile=countFile+1;
 
 }
 
 else{
-countDir=countDir+1;
+    countDir=countDir+1;
+}
 
 }
 
-})
-
-}
-fetchObj.countDir=countDir;
-fetchObj.countFile=countFile;
-fetchObj.files=files;
-res(fetchObj);
-}
+filesObj.countDir=countDir;
+filesObj.countFile=countFile;
+filesObj.files=files;
+res(filesObj);
 });
 
 
