@@ -18,11 +18,12 @@ break;
 }
 fs.readFile(fileAtIndex,'utf-8',(err,data)=>{
 if(err){
+  throw err;
     //throw new Error('Error reading file');
-console.log(err);
+//console.log(err);
 }
-fileAtIndexObj.data=data.toString();
-fileAtIndexObj.filename=fileAtIndex.toString();
+fileAtIndexObj.data=data;
+fileAtIndexObj.filename=fileAtIndex;
 res(fileAtIndexObj);
 
 })
