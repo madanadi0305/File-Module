@@ -1,45 +1,53 @@
 var fs=require('fs');
-function fetchAndRetrieve(pathToDir,index){
-return new Promise((res,rej)=>{
-fs.readdir(pathToDir,(err,files)=>{
-if(err){
-rej("Error occured while fetching files from Directory");
+var path=require('path');
+function fetchData(dirPath,index){
+  return new Promise((res,rej)=>{
+  fs.readdir(dirPath,(error,files)=>{
+   if(error){
+  rej("Error occured while fetching files from Directory");
 
+   }
+  else{
+    var fileAtIndex;
+    for(var i=0;i<files.length;i++){
+   if(index===i){
+   fileAtIndex=files[i];
+   break;
+   }
+
+    }
+fs.access(fileAtIndex,error=>{
+if(error){
+  throw error;
 }
 else{
- var fileAtIndexObj={};
- var fileAtIndex;   
-for(var i=0;i<files.length;i++){
-if(i===index){
-fileAtIndex=files[i];
-break;
-}
+  var obj={};
+  var pathToFile=fileAtIndex;
+  fs.readFile(fileAtIndex,'utf-8',(err,data)=>{
+  if(err){
+    throw err;
+  }
+  else{
+    obj.data=data;
+    obj.filename=path.basename(fileAtIndex);
 
-}
-fs.readFile(fileAtIndex,'utf-8',(err,data)=>{
-if(err){
-  throw err;
-    //throw new Error('Error reading file');
-//console.log(err);
-}
-fileAtIndexObj.data=data;
-fileAtIndexObj.filename=String(fileAtIndex);
-res(fileAtIndexObj);
+    res(obj);
+  }
 
-})
-
-
+  })
 }
 
 })
 
 
+  }
 
-});
+  })
+
+  });
 
 
 
 }
 
-
-module.exports=fetchAndRetrieve;
+module.exports=fetchData;
