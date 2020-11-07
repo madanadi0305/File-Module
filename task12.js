@@ -23,7 +23,7 @@ if(err){
 //console.log(err);
 }
 fileAtIndexObj.data=data;
-fileAtIndexObj.filename=fileAtIndex;
+fileAtIndexObj.filename=String(fileAtIndex);
 res(fileAtIndexObj);
 
 })
