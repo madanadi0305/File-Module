@@ -8,30 +8,23 @@ fs.readdir(pathToDirectory,(error,files)=>{
 if(error){
     rej("Error occured while reading directory");
 }
-else{
+
 
 for(var i=0;i<files.length;i++){
 var elem=String(files[i]);    
 if(elem.includes('.')){
 countFile=countFile+1;
-
 }
-
 else{
     countDir=countDir+1;
 }
-
 }
-
 filesObj.countDir=countDir;
 filesObj.countFile=countFile;
 filesObj.files=files;
 res(filesObj);
-}
-});
-
 
 });
-
+});
 }
 module.export=countDirAndFiles;
