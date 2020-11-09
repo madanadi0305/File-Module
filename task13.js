@@ -36,8 +36,9 @@ obj.birthTime=stats.birthtimeMs;
 })
 
 obj.filename=path.basename(pathToFile);
-res(obj);
+
 }
+res(obj);
 })
 });
 
