@@ -22,14 +22,14 @@ if(error){
 }
 else{
   var obj={};
-  var pathToFile=String(fileAtIndex);
-  fs.readFile(fileAtIndex,'utf-8',(err,data)=>{
+  var pathToFile=dirPath+"/"+fileAtIndex;
+  fs.readFile(pathToFile,'utf-8',(err,data)=>{
   if(err){
     throw err;
   }
   else{
     obj.data=data;
-    obj.filename=path.basename(fileAtIndex);
+    obj.filename=path.basename(pathToFile);
 
     res(obj);
   }
