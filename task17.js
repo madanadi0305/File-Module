@@ -8,21 +8,23 @@ if(err){
 else{
 fs.readFile(pathToFile,'utf-8',(err,data)=>{
 if(err){
-//throw new Error('Error reading file');
-return 0;
+throw new Error('Error reading file');
+//return 0;
 }
 
-
+else{
 //var readContent=data;
 fs.writeFile(pathToFile,writeContent,err=>{
 if(err){
-    return 0;
+    //return 0;
+    throw new Error('Error writing into file');
 }
-
+else{
     res("Content appended to file successfully");
+}
 })
 
-
+}
 
 })
 
