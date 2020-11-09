@@ -42,7 +42,7 @@ if(err){
 }
 obj.size=stats.size;
 obj.birthTime=stats.birthtimeMs;
-obj.filename=fileAtIndex
+obj.filename=fileAtIndex;
 })
 }
 
