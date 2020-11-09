@@ -12,17 +12,16 @@ if(err){
 return 0;
 }
 
-else{
+
 //var readContent=data;
 fs.writeFile(pathToFile,writeContent,err=>{
 if(err){
     return 0;
 }
-else{
+
     res("Content appended to file successfully");
-}
 })
-}
+
 
 
 })
@@ -36,7 +35,8 @@ else{
 
 });
 
+
+
+
+}
 module.exports=appendData;
-
-
-}
