@@ -18,15 +18,15 @@ if(i===index){
 }
 var pathToFile=pathDirectory+"/"+String(files[pos]);
 var obj={};
-var readContent;
+//var readContent;
 fs.readFile(pathToFile,'utf-8',(err,data)=>{
 if(err){
     throw err;
 }
-readContent=data;
-
-})
+var readContent=data;
 obj.data=readContent;
+})
+
 fs.stat(pathToFile,(err,stats)=>{
 if(err){
     throw err;
