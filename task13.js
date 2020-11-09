@@ -1,54 +1,44 @@
 var fs=require('fs');
+var path=require('path');
 function fetchAndGet(pathDirectory,index){
 var fileAtIndex;
 return new Promise((res,rej)=>{
 fs.readdir(pathDirectory,(err,files)=>{
 if(err){
-rej("Error occured while fetching files from Directory");
-
+ rej("Error occured while fetching files from Directory");   
 }
 else{
-
+ var pos=0;   
 for(var i=0;i<files.length;i++){
 if(i===index){
-fs.access(files[index],err=>{
-if(err){
-    throw err;
-}
-else{
-    fileAtIndex=files[index];
-}
-})
-
-break;
+    pos=index;
+    break;
 }
 
 }
+var pathToFile=pathDirectory+"/"+String(files[pos]);
 var obj={};
-var data;
-fs.readFile(fileAtIndex,'utf-8',(readContent,err)=>{
+var readContent;
+fs.readFile(pathToFile,'utf-8',(err,data)=>{
 if(err){
     throw err;
 }
-else{
-data=readContent;
-}
+readContent=data;
 
 })
-obj.data=data;
-fs.stat(fileAtIndex,(err,stats)=>{
+obj.data=readContent;
+fs.stat(pathToFile,(err,stats)=>{
 if(err){
     throw err;
 }
 obj.size=stats.size;
 obj.birthTime=stats.birthtimeMs;
-obj.filename=fileAtIndex;
 })
+
+obj.filename=path.basename(pathToFile);
+res(obj);
 }
-
 })
-
-
 });
 
 
