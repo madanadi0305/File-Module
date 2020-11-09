@@ -8,8 +8,8 @@ if(err){
 else{
 fs.readFile(pathToFile,'utf-8',(err,data)=>{
 if(err){
-throw new Error('Error reading file');
-
+//throw new Error('Error reading file');
+return 0;
 }
 
 else{
