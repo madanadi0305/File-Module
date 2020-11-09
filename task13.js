@@ -1,7 +1,7 @@
 var fs=require('fs');
 var path=require('path');
 function fetchAndGet(pathDirectory,index){
-var fileAtIndex;
+//var fileAtIndex;
 return new Promise((res,rej)=>{
 fs.readdir(pathDirectory,(err,files)=>{
 if(err){
@@ -11,17 +11,16 @@ else{
  var pos=0;   
 for(var i=0;i<files.length;i++){
 if(i===index){
-    pos=index;
+    pos=i;
     break;
 }
-
 }
-var pathToFile=pathDirectory+"/"+String(files[pos]);
+var pathToFile=String(pathDirectory)+"/"+String(files[pos]);
 var obj={};
 //var readContent;
 fs.readFile(pathToFile,'utf-8',(err,data)=>{
 if(err){
-    throw err;
+    return err;
 }
 var readContent=data;
 obj.data=readContent;
