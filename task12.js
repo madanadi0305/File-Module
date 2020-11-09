@@ -22,7 +22,7 @@ if(error){
 }
 else{
   var obj={};
-  var pathToFile=fileAtIndex;
+  var pathToFile=String(fileAtIndex);
   fs.readFile(fileAtIndex,'utf-8',(err,data)=>{
   if(err){
     throw err;
