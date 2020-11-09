@@ -27,12 +27,12 @@ else{
   if(err){
     throw err;
   }
-  else{
+  
     obj.data=data;
     obj.filename=path.basename(pathToFile);
 
     res(obj);
-  }
+  
 
   })
 }
