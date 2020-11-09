@@ -22,7 +22,7 @@ fs.readFile(pathToFile,'utf-8',(err,data)=>{
 if(err){
     return err;
 }
-var readContent=data;
+var readContent=String(data);
 obj.data=readContent;
 })
 
