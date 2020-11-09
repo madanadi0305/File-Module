@@ -1,47 +1,52 @@
 var fs=require('fs');
 var path=require('path');
-function fetchAndGet(pathDirectory,index){
-//var fileAtIndex;
+function fetchAndGet(dirPath,index){
 return new Promise((res,rej)=>{
-fs.readdir(pathDirectory,(err,files)=>{
-if(err){
- rej("Error occured while fetching files from Directory");   
+fs.readdir(dirPath,(error,files)=>{
+if(error){
+    rej("Error occured while fetching files from Directory");
 }
-else{
- var pos=0;   
+var obj={};
+var pos=0;
 for(var i=0;i<files.length;i++){
 if(i===index){
     pos=i;
     break;
 }
-}
-var pathToFile=String(pathDirectory)+"/"+String(files[pos]);
-var obj={};
-//var readContent;
-fs.readFile(pathToFile,'utf-8',(err,data)=>{
-if(err){
-    return err;
-}
-var readContent=String(data);
-obj.data=readContent;
-})
 
-fs.stat(pathToFile,(err,stats)=>{
+}
+var filePath=dirPath+"/"+String(files[pos]);
+fs.access(filePath,err=>{
+if(err){
+    throw err;
+}
+fs.readFile(filePath,'utf-8',(err,data)=>{
+if(err){
+    throw err;
+}
+
+    var readContent=String(data);
+    obj.data=readContent;
+fs.stat(filePath,(err,stats)=>{
 if(err){
     throw err;
 }
 obj.size=stats.size;
 obj.birthTime=stats.birthtimeMs;
+
 })
-
-obj.filename=path.basename(pathToFile);
-
-}
+})
+})
+obj.filename=path.basename(filePath);
 res(obj);
 })
+
+
+
+
 });
 
 
-}
 
+}
 module.exports=fetchAndGet;
