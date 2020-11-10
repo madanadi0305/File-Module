@@ -9,15 +9,15 @@ if(err){
 var countObj={};
 var funcCount=0;
 var varCount=0;
-var readContent=data.split(' ');
+var readContent=String(data).split(' ');
 
 for(var content in readContent){
 if(typeof content==='function'){
 funcCount=funcCount+1;
 
 }
-else if(typeof content==='string'|| typeof content==='number'|| typeof content==='undefined'||typeof content==='boolean')
-{varCount=varCount+1;
+else if(content==='var'||content==='let'||content==='const'){
+varCount=varCount+1;
 
 }
 
