@@ -35,10 +35,10 @@ obj.birthTime=stats.birthtimeMs;
 
 
 obj.filename=path.basename(filePath);
-
+res(obj);
 })
 
-res(obj);
+//res(obj);
 
 
 });
