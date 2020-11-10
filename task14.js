@@ -13,7 +13,7 @@ var readContent=String(data).split(' ');
 
 for(var i=0;i<readContent.length;i++){
 var content=readContent[i];    
-if(content==='function'||content===' =>'){
+if(content==='function'||content==='=>'){
 funcCount=funcCount+1;
 
 }
