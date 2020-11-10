@@ -16,27 +16,28 @@ if(i===index){
 
 }
 var filePath=dirPath+"/"+String(files[pos]);
-fs.access(filePath,err=>{
-if(err){
-    throw err;
-}
 fs.readFile(filePath,'utf-8',(err,data)=>{
 if(err){
     throw err;
 }
+else if(String(data)===null || String(data)==='undefined'||String(data)===' '){
+throw new Error('File is empty');
 
-    var readContent=String(data);
-    obj.data=readContent;
+}
+
+obj.data=String(data);
+
+
+})
 fs.stat(filePath,(err,stats)=>{
 if(err){
     throw err;
 }
 obj.size=stats.size;
 obj.birthTime=stats.birthtimeMs;
+})
 
-})
-})
-})
+
 obj.filename=path.basename(filePath);
 res(obj);
 })
