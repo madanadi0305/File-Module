@@ -6,6 +6,7 @@ fs.readdir(dirPath,(error,files)=>{
 if(error){
     rej("Error occured while fetching files from Directory");
 }
+else{
 var obj={};
 var pos=0;
 for(var i=0;i<files.length;i++){
@@ -36,6 +37,7 @@ obj.birthTime=stats.birthtimeMs;
 
 obj.filename=path.basename(filePath);
 res(obj);
+}
 })
 
 //res(obj);
