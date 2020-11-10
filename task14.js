@@ -17,7 +17,7 @@ if(content==='function'||content===' =>'){
 funcCount=funcCount+1;
 
 }
-else if(content==='var '||content==='let '||content==='const '){
+else if(content==='var'||content==='let'||content==='const'){
 varCount=varCount+1;
 
 }
