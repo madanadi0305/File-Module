@@ -11,8 +11,9 @@ var funcCount=0;
 var varCount=0;
 var readContent=String(data).split(' ');
 
-for(var content in readContent){
-if(typeof content==='function'){
+for(var i=0;i<readContent.length;i++){
+var content=readContent[i];    
+if(content==='function'||content==='=>'){
 funcCount=funcCount+1;
 
 }
