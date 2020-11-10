@@ -22,9 +22,6 @@ if(err){
 }
 
 obj.data=String(data);
-
-
-})
 fs.stat(filePath,(err,stats)=>{
 if(err){
     throw err;
@@ -33,12 +30,15 @@ obj.size=stats.size;
 obj.birthTime=stats.birthtimeMs;
 })
 
-
-obj.filename=path.basename(filePath);
-res(obj);
 })
 
 
+
+obj.filename=path.basename(filePath);
+
+})
+
+res(obj);
 
 
 });
