@@ -24,6 +24,7 @@ else if(typeof content==='string'|| typeof content==='number'|| typeof content==
 }
 countObj.functionCount=funcCount;
 countObj.variableCount=varCount;
+res(countObj);
 })
 
 
