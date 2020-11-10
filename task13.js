@@ -20,10 +20,6 @@ fs.readFile(filePath,'utf-8',(err,data)=>{
 if(err){
     throw err;
 }
-else if(String(data)===null || String(data)==='undefined'||String(data)===' '){
-throw new Error('File is empty');
-
-}
 
 obj.data=String(data);
 
