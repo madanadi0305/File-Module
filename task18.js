@@ -1,5 +1,5 @@
-var fs=required('fs');
-var path=required('path');
+var fs=require('fs');
+var path=require('path');
 function copyFileContents(sourcePath,destPath){
 var readContent=null;
 return new Promise((res,rej)=>{
