@@ -9,7 +9,7 @@ task4.checkFileExists(destinationFile).then(()=>{
 }).catch(()=>{
 fs.copyFile(sourceFile,destinationFile,err=>{
 if(err){
-    throw new Error('Cannot copy file');
+    throw err;
 }
 else{
     res("Content copied successfully");
