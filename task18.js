@@ -15,13 +15,14 @@ if(err){
     throw err;
 }
 else{
-    readContent=data;
+    readContent=data.toString();
 }
 
 })
 fs.writeFile(destPath,readContent,err=>{
 if(err){
     throw err;
+    
 }
 else{
 res("Content written to file successfully");
