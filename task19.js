@@ -3,7 +3,7 @@ var fs=require('fs');
 var task4=require('./task04');
 function copyFileContents(sourceFile,destinationFile){
 return new Promise((res,rej)=>{
-task4.then(()=>{
+task4(destinationFile).then(()=>{
  rej("cannot copy data : File exists");
 }).catch(()=>{
 fs.copyFile(sourceFile,destinationFile,err=>{
