@@ -1,0 +1,36 @@
+var fs=required('fs');
+var path=required('path');
+function copyFileContents(sourcePath,destPath){
+var readContent=null;
+return new Promise((res,rej)=>{
+//check if source file exists or not
+fs.access(sourcePath,err=>{
+if(err){
+rej("Source File does not exists");
+
+}
+else{
+fs.readFile(sourcePath,'utf-8',(err,data)=>{
+if(err){
+    throw err;
+}
+else{
+    readContent=data;
+}
+
+})
+
+}
+fs.writeFile(destPath,readContent,err=>{
+if(err){
+    throw err;
+}
+res("Content written to file successfully");
+})
+
+})
+});
+
+
+}
+module.exports=copyFileContents;
