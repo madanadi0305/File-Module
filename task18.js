@@ -1,7 +1,7 @@
 var fs=require('fs');
 var path=require('path');
 function copyFileContents(sourcePath,destPath){
-var readContent=null;
+var readContent="";
 return new Promise((res,rej)=>{
 //check if source file exists or not
 fs.access(sourcePath,err=>{
