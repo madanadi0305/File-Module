@@ -15,7 +15,7 @@ if(err){
     throw err;
 }
 else{
-    readContent=data.toString();
+    readContent=String(data);
 }
 
 })
