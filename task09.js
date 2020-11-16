@@ -12,7 +12,7 @@ if(err){
 for(var i=0;i<files.length;i++){
 var elem=files[i];
 var elemPath=dirPath+"/"+String(elem);
-fs.stats(elemPath,(err,stats)=>{
+fs.stat(elemPath,(err,stats)=>{
 if(err){
     throw err;
 }
