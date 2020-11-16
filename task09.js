@@ -9,6 +9,7 @@ fs.readdir(dirPath,(err,files)=>{
 if(err){
     rej("Error occured while traversing directory");
 }
+else{
 for(var i=0;i<files.length;i++){
 var elem=files[i];
 var elemPath=dirPath+"/"+String(elem);
@@ -31,6 +32,7 @@ countDirs=countDirs+1;
 countObj.countDir=parseInt(countDirs);
 countObj.countFile=parseInt(countFiles);
 res(countObj);
+}
 })
 
 
