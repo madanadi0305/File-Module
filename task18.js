@@ -16,9 +16,6 @@ if(err){
 }
 else{
     readContent=String(data);
-}
-
-})
 fs.writeFile(destPath,readContent,err=>{
 if(err){
     throw err;
@@ -28,6 +25,10 @@ else{
 res("Content written to file successfully");
 }
 })
+}
+
+})
+
 }
 
 
