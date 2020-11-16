@@ -20,9 +20,10 @@ else{
 if(stats.isFile()){
     countFiles=countFiles+1;
 }
-else if(stats.isDirectory()){
-    countDirs=countDirs+1;
-}
+countDirs=countDirs+1;
+/*else if(stats.isDirectory()){
+    
+}*/
 
 }
 })
