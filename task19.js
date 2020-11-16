@@ -1,13 +1,14 @@
 var path=require('path');
 var fs=require('fs');
-var task4=require('./task04');
-function copyFileContents(sourceFile,destinationFile){
- //var destPath=path.basename(destinationFile);   
+//var task4=require('./task04');
+import {checkFileExists} from './task04';
+function copyOperation(source,destination){
 return new Promise((res,rej)=>{
-task4(destinationFile).then(()=>{
- rej("cannot copy data : File exists");
-}).catch(()=>{
-fs.copyFile(sourceFile,destinationFile,err=>{
+checkFileExists(destination).then(
+ ()=>{
+     rej("cannot copy data : File exists");}   
+)
+fs.copyFile(source,destination,err=>{
 if(err){
     throw err;
 }
@@ -15,13 +16,9 @@ else{
     res("Content copied successfully");
 }
 })
-
-
 });
 
-
-});
 
 
 }
-module.exports=copyFileContents;
+module.exports=copyOperation;
