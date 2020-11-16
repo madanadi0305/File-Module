@@ -43,8 +43,8 @@ fs.stat(filePath,(err,stats)=>{
        fileObj.birthTime=stats.birthtimeMs;
    }
     })
-var fileArray=filePath.split('.');
-fileObj.filename=String(String(fileArray[0]));
+//var fileArray=filePath.split('.');
+fileObj.filename=String(filePath);
 res(fileObj);
 }
 })
