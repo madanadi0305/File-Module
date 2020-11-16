@@ -28,7 +28,7 @@ throw err;
 }
 else{
     var readContent=data;
-    fileObj.data=readContent;
+    fileObj.data=String(readContent);
     
     //fileObj.filename=filePath;
 }
