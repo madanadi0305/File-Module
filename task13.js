@@ -20,14 +20,14 @@ pos=i;
 
 }
 var path1=String(dirPath)+"/"+String(files[pos]);
- filePath=path.basename(path1);
+filePath=path.basename(path1);
 fs.readFile(filePath,'utf-8',(err,data)=>{
 if(err){
 throw err;
 
 }
 else{
-    var readContent=String(data);
+    var readContent=data;
     fileObj.data=readContent;
     
     //fileObj.filename=filePath;
