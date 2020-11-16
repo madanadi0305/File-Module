@@ -9,7 +9,7 @@ if(err){
     rej("Error occured while fetching files from Directory");
 }
 else{
-var filePath="";    
+var filePath;    
 var pos=0;
 var fileObj={};    
 for(var i=0;i<files.length;i++){
