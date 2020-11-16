@@ -20,13 +20,16 @@ else{
 if(stats.isFile()){
     countFiles=countFiles+1;
 }
-countDirs=countDirs+1;
+else if(stats.isDirectory()){
+    countDirs=countDirs+1;
+}
+
 }
 })
 }
 countObj.countDir=parseInt(countDirs);
 countObj.countFile=parseInt(countFiles);
-res()
+res(countObj);
 })
 
 
