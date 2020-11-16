@@ -4,7 +4,7 @@ var fs=require('fs');
 function fileAndIndex(dirPath,index){
     
 return new Promise((res,rej)=>{
-fs.readdir(dirPath,(err,files)=>{
+fs.readdir(dirPath,'utf-8',(err,files)=>{
 if(err){
     rej("Error occured while fetching files from Directory");
 }
