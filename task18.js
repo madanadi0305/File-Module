@@ -10,12 +10,12 @@ rej("Source File does not exists");
 
 }
 else{
-fs.readFile(sourcePath,'utf-8',(err,data)=>{
+fs.readFile(sourcePath,(err,data)=>{
 if(err){
     throw err;
 }
 else{
-    readContent=data;
+    readContent=String(data);
 }
 
 })
