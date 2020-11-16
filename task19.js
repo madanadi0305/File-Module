@@ -6,7 +6,7 @@ var task4=require('./task04');
 function copyOperation(source,destination){
 var fileExists=task4.checkFileExists(destination);
 return new Promise((res,rej)=>{
-fileExists(destination).then(
+fileExists.then(
  ()=>{
      rej("cannot copy data : File exists");}   
 ).catch(err=>{console.log(err);})
