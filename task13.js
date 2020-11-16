@@ -1,5 +1,6 @@
 var path=require('path');
 var fs=require('fs');
+
 function fileAndIndex(dirPath,index){
     
 return new Promise((res,rej)=>{
@@ -8,6 +9,7 @@ if(err){
     rej("Error occured while fetching files from Directory");
 }
 else{
+var filePath="";    
 var pos=0;
 var fileObj={};    
 for(var i=0;i<files.length;i++){
@@ -18,16 +20,21 @@ pos=i;
 
 }
 var path1=String(dirPath)+"/"+String(files[pos]);
-var filePath=path.basename(path1);
+ filePath=path.basename(path1);
 fs.readFile(filePath,(err,data)=>{
 if(err){
 throw err;
 
 }
 else{
-    var readContent=data.toString();
+    var readContent=String(data);
     fileObj.data=readContent;
-    fs.stat(filePath,(err,stats)=>{
+    
+    //fileObj.filename=filePath;
+}
+})
+
+fs.stat(filePath,(err,stats)=>{
     if(err){
         throw err;
     }
@@ -36,9 +43,8 @@ else{
        fileObj.birthTime=stats.birthtimeMs;
    }
     })
-    fileObj.filename=filePath;
-}
-})
+
+fileObj.filename=filePath;
 }
 })
 
