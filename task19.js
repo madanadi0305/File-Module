@@ -7,7 +7,7 @@ return new Promise((res,rej)=>{
 task4.checkFileExists(destination).then(
  ()=>{
      rej("cannot copy data : File exists");}   
-)
+).catch(err=>{console.log(err);})
 fs.copyFile(source,destination,err=>{
 if(err){
     throw err;
