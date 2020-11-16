@@ -44,7 +44,7 @@ fs.stat(filePath,(err,stats)=>{
    }
     })
 
-fileObj.filename=filePath;
+fileObj.filename=String(filePath);
 res(fileObj);
 }
 })
