@@ -15,7 +15,7 @@ if(err){
     throw err;
 }
 else{
-    readContent=String(data);
+    readContent=data;
 }
 
 })
