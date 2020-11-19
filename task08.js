@@ -29,7 +29,7 @@ fileArray.push(getArray(pathElem));
 })
 
 }
-
+res(fileArray);
 }
 
 
