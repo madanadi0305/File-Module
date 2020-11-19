@@ -28,7 +28,13 @@ throw err;
 }
 else{
     var readContent=data;
-    fileObj.data=String(readContent);
+    if(data===""||data===null){
+        throw new Error('Cannot insert content because file is empty');
+    }
+    else{
+        fileObj.data=String(readContent);
+    }
+    
     
     //fileObj.filename=filePath;
 }
