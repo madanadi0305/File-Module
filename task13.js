@@ -25,7 +25,7 @@ if(err){
     throw err;
 }
 else{
-    if(String(data)===""||String(data)===null){
+    if(String(data)===""||String(data)===null||data===undefined){
         throw err;
     }
     else{
