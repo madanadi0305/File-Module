@@ -20,7 +20,7 @@ break;
 }
 indexFilePath=directoryPath+"/"+String(files[pos]);
 var fileName=path.basename(indexFilePath)
-fs.readFile(fileName,'utf-8',(err,data)=>{
+fs.readFile(indexFilePath,'utf-8',(err,data)=>{
 if(err){
     throw err;
 }
@@ -36,7 +36,7 @@ else{
 
 
 })
-fs.stat(fileName,(err,stats)=>{
+fs.stat(indexFilePath,(err,stats)=>{
 fileAtIndexObj.size=stats.size;
 fileAtIndexObj.birthTime=stats.birthtimeMs;
 
