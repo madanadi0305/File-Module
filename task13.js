@@ -37,13 +37,12 @@ else{
 
 })
 fs.stat(indexFilePath,(err,stats)=>{
+if(err){
+    throw err;
+}
 
-if(stats.size===-1){
-    fileAtIndexObj.size=-1;
-}
-else{
 fileAtIndexObj.size=stats.size;
-}
+
 fileAtIndexObj.birthTime=stats.birthtimeMs;
 
 })
