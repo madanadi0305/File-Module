@@ -26,7 +26,7 @@ if(err){
 }
 else{
     if(String(data)===""||String(data)===null||data===undefined){
-        throw err;
+        fileAtIndexObj.data="";
     }
     else{
         fileAtIndexObj.data=String(data);
