@@ -2,7 +2,7 @@ var fs=require('fs');
 var path=require('path');
 function getArray(directoryPath){
 return new Promise((res,rej)=>{
-fs.readdir(directoryPath,(err,files)=>{})
+fs.readdir(directoryPath,(err,files)=>{
 if(err){
     rej("Error occured while reading directory");
 }
@@ -23,17 +23,11 @@ fileArray.push(path.basename(pathElem));
 fileArray.push(getArray(pathElem));
 
 }
-
-
-
 })
-
 }
 res(fileArray);
 }
-
-
+})
 });
-
 }
 module.exports=getArray;
