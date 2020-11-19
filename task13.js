@@ -1,62 +1,54 @@
-var path=require('path');
 var fs=require('fs');
-
-function fileAndIndex(dirPath,index){
-    
+var path=require('path');
+function fileIO(directoryPath,index){
 return new Promise((res,rej)=>{
-fs.readdir(dirPath,(err,files)=>{
-if(err){
+//read the directory to fetch all files
+fs.readdir(directoryPath,(error,files)=>{
+if(error){
     rej("Error occured while fetching files from Directory");
 }
-else{
-var filePath;    
-var pos=0;
-var fileObj={};    
+
+var fileAtIndexObj={};
+var indexFilePath;
+var pos;
 for(var i=0;i<files.length;i++){
 if(i===index){
 pos=i;
+break;
 }
 
-
 }
-var path1=String(dirPath)+"/"+String(files[pos]);
-filePath=path.basename(path1);
-fs.readFile(filePath,'utf-8',(err,data)=>{
+indexFilePath=directoryPath+"/"+String(files[pos]);
+var fileName=path.basename(indexFilePath)
+fs.readFile(fileName,'utf-8',(err,data)=>{
 if(err){
-throw err;
-
+    throw err;
 }
 else{
-    var readContent=data;
-    if(data===""||data===null){
-        throw new Error('Cannot insert content because file is empty');
-    }
-    else{
-        fileObj.data=String(readContent);
-    }
-    
-    
-    //fileObj.filename=filePath;
-}
-})
-
-fs.stat(filePath,(err,stats)=>{
-    if(err){
+    if(String(data)===""||String(data)===null){
         throw err;
     }
-   else{
-       fileObj.size=stats.size;
-       fileObj.birthTime=stats.birthtimeMs;
-   }
-    })
-//var fileArray=filePath.split('.');
-fileObj.filename=String(filePath);
-res(fileObj);
+    else{
+        fileAtIndexObj.data=String(data);
+        
+    }
 }
+
+
+})
+fs.stat(fileName,(err,stats)=>{
+fileAtIndexObj.size=stats.size;
+fileAtIndexObj.birthTime=stats.birthtimeMs;
+
 })
 
-});
+fileAtIndexObj.filename=fileName;
+res(fileAtIndexObj);
+
+})
 
 
+    });
+    
 }
-module.exports=fileAndIndex;
+module.exports=fileIO;
