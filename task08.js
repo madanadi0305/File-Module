@@ -20,7 +20,10 @@ else{
 fileArray.push(path.basename(pathElem));
 
 }
-fileArray.push(getArray(pathElem));
+else{
+    fileArray.push(getArray(pathElem));
+
+}
 
 }
 })
