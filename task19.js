@@ -2,15 +2,15 @@ var path=require('path');
 var fs=require('fs');
 //var task4=require('./task04');
 //var task4=require('./task04');
-
+var taskFour=require('./task04.js');
 function copyOperation(source,destination){
 var msg="cannot copy data : File exists";
-var fileExists=require('./task04.js').checkFileExists(destination);
+
 return new Promise((res,rej)=>{
-fileExists.then(
+taskFour(source).then(
  (msg)=>{
      rej(msg);}   
-).catch(err=>{console.log(err);
+).catch(err=>{
 fs.copyFile(source,destination,err=>{
 if(err){
     throw err;
