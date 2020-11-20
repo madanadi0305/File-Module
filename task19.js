@@ -10,7 +10,7 @@ return new Promise((res,rej)=>{
 taskFour(destination).then(
  (msg)=>{
      rej(msg);}   
-).catch(err=>{
+).catch(()=>{
 fs.copyFile(source,destination,err=>{
 if(err){
     throw err;
