@@ -8,6 +8,7 @@ if(err){
 }
 else{
 var fileArray=[];    
+var traverseArray=[];
 for(var i=0;i<files.length;i++){
 var elem=files[i];
 var pathElem=directoryPath+"/"+String(elem);
@@ -21,7 +22,8 @@ fileArray.push(path.basename(pathElem));
 
 }
 else{
-    getArray(pathElem);
+    traverseArray.push(getArray(pathElem));
+    fileArray.push(traverseArray);
 
 }
 
