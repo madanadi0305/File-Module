@@ -8,7 +8,7 @@ return new Promise((res,rej)=>{
    rej('File does not exists');   
   } 
   else{
-   res('File exists');  
+   res("cannot copy data : File exists");  
   }  
  });   
 });  
