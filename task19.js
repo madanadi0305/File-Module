@@ -11,7 +11,7 @@ four(destinationPath).then(
 fs.copyFile(sourcePath,destinationPath,err=>{
 if(err){
     //reject(err);
-    return err;
+    throw err;
 }
 else{
     resolve("Content copied successfully");
