@@ -10,7 +10,8 @@ four(destinationPath).then(
 //not exists create one
 fs.copyFile(sourcePath,destinationPath,err=>{
 if(err){
-    reject(err);
+    //reject(err);
+    return err;
 }
 else{
     resolve("Content copied successfully");
