@@ -18,7 +18,7 @@ if(err){
     throw err;
 }
 else{
-if(stats.isFile()){
+if(stats.isFile()===true){
     countFiles=countFiles+1;
 }
 
