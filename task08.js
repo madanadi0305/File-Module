@@ -21,7 +21,7 @@ fileArray.push(path.basename(pathElem));
 
 }
 else{
-    fileArray=getArray(pathElem);
+    getArray(pathElem);
 
 }
 
