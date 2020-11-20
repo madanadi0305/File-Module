@@ -22,7 +22,7 @@ if(stats.isFile()===true){
     countFiles=countFiles+1;
 }
 
-else if(stats.isDirectory()){
+else if(stats.isDirectory()===true){
 countDirs=countDirs+1;
 countFilesAndDirectories(elemPath);
 }
