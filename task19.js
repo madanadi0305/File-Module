@@ -8,8 +8,8 @@ function copyOperation(source,destination){
 
 return new Promise((res,rej)=>{
 taskFour(destination).then(
- (msg)=>{
-     rej(msg);}   
+ ()=>{
+     rej("cannot copy data : File exists");}   
 ).catch(()=>{
 fs.copyFile(source,destination,err=>{
 if(err){
