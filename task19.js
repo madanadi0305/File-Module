@@ -13,7 +13,7 @@ taskFour(destination).then(
 ).catch(
 fs.copyFile(source,destination,err=>{
 if(err){
-    throw err;
+    console.log(err);
 }
 else{
     res("Content copied successfully");
