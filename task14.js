@@ -13,10 +13,10 @@ var countObj={};
 var contents=data;
 for(var i=0;i<contents.length;i++){
     var content=contents[i];
-if((content==='){')||(content===')=>')){
+if((content==='){' )||(content===')=>')){
     functionCount=functionCount+1;
 }
-else if((String(content)==='var')||(String(content)==='let')||(String(content)==='const')){
+else if(content==='let'||content==='var'||content==='const'){
     variableCount=variableCount+1;
 }
 }
