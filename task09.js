@@ -18,11 +18,11 @@ var pathElem=files[i];
 if(pathElem.lastIndexOf('.')!==-1){
     countFile=countFile+1;
 }
-countSubDir=countSubDir+1;
-count(directoryPath+"/"+String(pathElem));
-}
-//countDir=countDir+1;
+//countSubDir=countSubDir+1;
 //count(directoryPath+"/"+String(pathElem));
+}
+countDir=countDir+1;
+count(directoryPath+"/"+String(pathElem));
 }
 countObj.countDir=parseInt(countSubDir);
 countObj.countFile=countFile;
