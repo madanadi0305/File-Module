@@ -16,10 +16,11 @@ if(pathFile.lastIndexOf('.')!==-1){
     countFile=countFile+1;
 }
 else
-{countDir=countDir+1;
-
-}
+{
 count(pathElem);
+countDir=countDir+1;
+}
+
 }
 
 countObj.countDir=countDir;
