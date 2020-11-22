@@ -17,7 +17,8 @@ if(pathElem.lastIndexOf('.')!==-1){
 }
 else
 {
-count(pathElem);
+    var nextPath=pathElem+"/";
+count(nextPath);
 // contents/inContent
 /*
 File1.txt  1
