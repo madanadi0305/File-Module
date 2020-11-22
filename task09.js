@@ -24,10 +24,11 @@ count(String(pathElem)+"/");
 countDir=countDir+1;
 count(String(pathElem));
 }
-})
 countObj.countDir=parseInt(countDir+countSubDir);
 countObj.countFile=countFile;
 res(countObj);
+})
+
 
 });
 
