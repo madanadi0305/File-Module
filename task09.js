@@ -17,8 +17,9 @@ if(pathFile.lastIndexOf('.')!==-1){
 }
 else
 {countDir=countDir+1;
-count(pathElem);
+
 }
+count(pathElem);
 }
 
 countObj.countDir=countDir;
