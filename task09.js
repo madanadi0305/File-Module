@@ -10,14 +10,14 @@ var countFile=0;
 var countDir=0;
 var countObj={};
 for(var i=0;i<files.length;i++){
-var pathElem=directoryPath+"/"+String(files[i]);
-var pathFile=path.basename(pathElem);
-if(pathFile.lastIndexOf('.')!==-1){
+var pathElem=String(files[i]);
+//var pathFile=path.basename(pathElem);
+if(pathElem.lastIndexOf('.')!==-1){
     countFile=countFile+1;
 }
 else
 {
-count(pathElem+"/");
+count(pathElem);
 // contents/inContent
 /*
 File1.txt  1
