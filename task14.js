@@ -11,7 +11,7 @@ var functionCount=0;
 var variableCount=0;    
 var countObj={};
 var contents=data.toString();
-for(var content of contents){
+for(var content in contents){
 if(content.toString()==='){...}'||content.toString()===')=>{..}'){
     functionCount=functionCount+1;
 }
