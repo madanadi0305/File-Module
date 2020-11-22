@@ -25,7 +25,7 @@ count(String(pathElem)+"/");
 }
 })
 countDir=countDir+1;
-count()
+count(String(pathElem));
 
 
 });
