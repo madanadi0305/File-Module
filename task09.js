@@ -17,7 +17,16 @@ if(pathFile.lastIndexOf('.')!==-1){
 }
 else
 {
-count(pathElem);
+count(pathElem+"/");
+// contents/inContent
+/*
+File1.txt  1
+File2.txt  2
+File3.txt  3
+File4.txt  4
+File5.txt  5
+ */
+
 countDir=countDir+1;
 }
 
