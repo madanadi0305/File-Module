@@ -10,7 +10,7 @@ else{
 var functionCount=0;
 var variableCount=0;    
 var countObj={};
-var contents=data.toString();
+var contents=data;
 for(var i=0;i<contents.length;i++){
     var content=contents[i];
 if(content==='){'||content===')=>'){
