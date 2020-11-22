@@ -1,38 +1,30 @@
 var fs=require('fs');
 var path=require('path');
-function getArray(directoryPath){
-return new Promise((res,rej)=>{
-fs.readdir(directoryPath,(err,files)=>{
+
+function arrayOfFiles(pathToDirectory){
+var fileArray=[];
+var dirPath=path.join(__dirname,pathToDirectory);
+return new Promise((resolve,reject)=>{
+fs.readdir(dirPath,(err,files)=>{
 if(err){
-    rej("Error occured while reading directory");
+    reject("Error occured while reading directory");
 }
-else{
-var fileArray=[];    
-var traverseArray=[];
+
 for(var i=0;i<files.length;i++){
-var elem=files[i];
-var pathElem=directoryPath+"/"+String(elem);
-fs.stat(pathElem,(err,stats)=>{
- if(err){
-     throw err;
- }   
-else{
-    if(stats.isFile()){
-fileArray.push(path.basename(pathElem));
-
+var pathElem=dirPath+"/"+String(files[i]);
+var fileName=path.basename(pathElem);
+if(fileName.lastIndexOf('.')!==-1){
+    fileArray.push(fileName);
 }
-else{
-    traverseArray.push(getArray(pathElem));
-    fileArray.push(traverseArray);
-
+//create a new array and push the callback function in it
+fileArray="["+arrayOfFiles(pathElem)+"]";
 }
 
-}
+resolve(fileArray);
 })
-}
-res(fileArray);
-}
-})
+
+
 });
+
 }
-module.exports=getArray;
+module.exports=arrayOfFiles;
