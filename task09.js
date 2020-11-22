@@ -30,7 +30,7 @@ File5.txt  5
 
 countDir=countDir+1;
 }
-
+count(pathElem);
 }
 
 countObj.countDir=countDir;
