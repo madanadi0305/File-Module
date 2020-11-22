@@ -8,6 +8,7 @@ if(err){
 }
 var countFile=0;
 var countDir=0;
+var countSubDir=0;
 var countObj={};
 for(var i=0;i<files.length;i++){
 var pathElem=String(files[i]);
@@ -31,10 +32,10 @@ File5.txt  5
 countDir=countDir+1;
 }
 count(directoryPath+"/"+pathElem+"/");
-countDir=countDir+1;
+countSubDir=countSubDir+1;
 }
 
-countObj.countDir=countDir;
+countObj.countDir=parseInt(countDir+countSubDir);
 countObj.countFile=countFile;
 res(countObj);
 })
