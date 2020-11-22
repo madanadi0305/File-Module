@@ -15,9 +15,10 @@ var pathFile=path.basename(pathElem);
 if(pathFile.lastIndexOf('.')!==-1){
     countFile=countFile+1;
 }
-countDir=countDir+1;
+else
+{countDir=countDir+1;
 count(pathElem);
-
+}
 }
 
 countObj.countDir=countDir;
