@@ -17,7 +17,7 @@ if(pathElem.lastIndexOf('.')!==-1){
 }
 else
 {
-var nextPath=pathElem+"/";
+var nextPath=path.dirname(directoryPath+"/"+pathElem);
 count(nextPath);
 // contents/inContent
 /*
