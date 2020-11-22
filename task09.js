@@ -17,7 +17,7 @@ if(pathElem.lastIndexOf('.')!==-1){
 }
 else
 {
-    var nextPath=pathElem+"/";
+var nextPath=pathElem+"/";
 count(nextPath);
 // contents/inContent
 /*
@@ -30,7 +30,7 @@ File5.txt  5
 
 countDir=countDir+1;
 }
-count(pathElem);
+count(fs.readdir(pathElem));
 countDir=countDir+1;
 }
 
