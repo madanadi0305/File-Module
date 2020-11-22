@@ -4,45 +4,31 @@ function count(directoryPath){
 return new Promise((res,rej)=>{
 fs.readdir(directoryPath,(err,files)=>{
 if(err){
-    rej("Error occured while traversing directory");
+rej("Error occured while traversing directory");
+
 }
-var countFile=0;
+else{
+var countObj={};
 var countDir=0;
 var countSubDir=0;
-var countObj={};
+var countFile=0;
 for(var i=0;i<files.length;i++){
-var pathElem=String(files[i]);
-//var pathFile=path.basename(pathElem);
+//var pathElem=directoryPath+"/"+String(files[i]);
+var pathElem=files[i];
 if(pathElem.lastIndexOf('.')!==-1){
     countFile=countFile+1;
 }
-else
-{
-var nextPath=path.dirname(directoryPath+"/"+pathElem+"/");
-count(nextPath);
-// contents/inContent
-/*
-File1.txt  1
-File2.txt  2
-File3.txt  3
-File4.txt  4
-File5.txt  5
- */
-
-countDir=countDir+1;
-}
-count(directoryPath+"/"+pathElem+"/");
 countSubDir=countSubDir+1;
+count(String(pathElem)+"/");
 }
 
-countObj.countDir=parseInt(countDir+countSubDir);
-countObj.countFile=countFile;
-res(countObj);
+}
 })
+countDir=countDir+1;
+count()
 
 
 });
-
 
 }
 module.exports=count;
