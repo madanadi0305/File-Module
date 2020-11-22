@@ -20,6 +20,9 @@ count(pathElem);
 
 }
 
+countObj.countDir=countDir;
+countObj.countFile=countFile;
+res(countObj);
 })
 
 
