@@ -16,7 +16,7 @@ for(var i=0;i<contents.length;i++){
 if((content==='){')||(content===')=>')){
     functionCount=functionCount+1;
 }
-else if((content==='var')||(content==='let')||(content==='const')){
+else if((String(content)==='var')||(String(content)==='let')||(String(content)==='const')){
     variableCount=variableCount+1;
 }
 }
