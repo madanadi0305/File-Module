@@ -1,39 +1,25 @@
 var fs=require('fs');
 var path=require('path');
-function countFilesAndDirectories(directoryPath){
-var countDirs=0;
-var countFiles=0;
-var countObj={};
+function count(directoryPath){
 return new Promise((res,rej)=>{
 fs.readdir(directoryPath,(err,files)=>{
 if(err){
     rej("Error occured while traversing directory");
 }
-else{
+var countFile=0;
+var countDir=0;
+var countObj={};
 for(var i=0;i<files.length;i++){
-var elem=files[i];
-var elemPath=directoryPath+"/"+String(elem);
-fs.stat(elemPath,(err,stats)=>{
-if(err){
-    throw err;
+var pathElem=directoryPath+"/"+String(files[i]);
+var pathFile=path.basename(pathElem);
+if(pathFile.lastIndexOf('.')!==-1){
+    countFile=countFile+1;
 }
-else{
-if(stats.isFile()===true){
-    countFiles=countFiles+1;
-}
-
-else if(stats.isDirectory()===true){
-countDirs=countDirs+1;
-countFilesAndDirectories(elemPath);
-}
+countDir=countDir+1;
+count(pathElem);
 
 }
-})
-}
-countObj.countDir=parseInt(countDirs);
-countObj.countFile=parseInt(countFiles);
-res(countObj);
-}
+
 })
 
 
@@ -41,5 +27,4 @@ res(countObj);
 
 
 }
-
-module.exports=countFilesAndDirectories;
+module.exports=count;
