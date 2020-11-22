@@ -24,7 +24,7 @@ if(pathElem.lastIndexOf('.')!==-1){
 countDir=countDir+1;
 count(directoryPath+"/"+String(pathElem));
 }
-countObj.countDir=parseInt(countSubDir);
+countObj.countDir=parseInt(countDir);
 countObj.countFile=countFile;
 res(countObj);
 })
