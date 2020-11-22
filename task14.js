@@ -6,7 +6,7 @@ fs.readFile(filePath,'utf-8',(err,data)=>{
 if(err){
     rej("Error reading file");
 }
-else{
+//else{
 var functionCount=0;
 var variableCount=0;    
 var countObj={};
@@ -23,7 +23,7 @@ else if((String(content)==='var')||(String(content)==='let')||(String(content)==
 countObj.functionCount=functionCount;
 countObj.variableCount=variableCount;
 res(countObj);
-}
+//}
 
 })
 
