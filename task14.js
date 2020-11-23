@@ -1,35 +1,36 @@
-var fs=require('fs');
-var path=require('path');
-function funcCount(filePath){
+const fs=require('fs');
+const path=require('path');
+function IOcount(filePath){
+var varCount=0;
 return new Promise((res,rej)=>{
 fs.readFile(filePath,(err,data)=>{
 if(err){
-    rej("Error reading file");
+  rej("Error reading file");
 }
 else{
-var functionCount=0;
-var variableCount=0;    
-var countObj={};
-var contents=data.toString();
-for(var content in contents){
-    
-if(((content)==='(){')||((content)==='()=>{')){
-    functionCount=functionCount+1;
-}
-else if(content==='let'|| content==='var'){
-    variableCount=variableCount+1;
+  var contentArray=[];
+  contents=data.toString();
+  var contents1=contents.split(' ');
+//console.log(contents1); 
+for(var i=0;i<contents1.length;i++){
+if((contents1[i]==='let') || (contents1[i]==='var')||(contents1[i]==='const'))
+{console.log(contents1[i]);
+  varCount=varCount+1;
 }
 }
-countObj.functionCount=(functionCount);
-countObj.variableCount=(variableCount);
-res(countObj);
-}
+res(varCount);
 
+}
 })
-
 
 });
 
 
 }
-module.exports=funcCount;
+module.exports=IOcount;
+//IOcount('helper1.js').then(msg=>{console.log(msg)}).catch(err=>{console.log(err)});
+
+
+
+
+
