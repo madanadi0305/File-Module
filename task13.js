@@ -35,6 +35,7 @@ else{
         //fileAtIndexObj.data=String(data);
        
     }*/
+    if(content===null||content===''||content===undefined){throw err;}
      content=data.toString();
      fileAtIndexObj.data=content;
     fs.stat(indexFilePath,(err,stats)=>{
