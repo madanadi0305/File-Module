@@ -16,7 +16,7 @@ for(var content in contents){
 if((String(content)==='function')||(String(content)==='() =>')){
     functionCount=functionCount+1;
 }
-else if(content==='let'||content==='var'||content==='const'){
+else if(content==='let'||content==='var'){
     variableCount=variableCount+1;
 }
 }
