@@ -2,7 +2,7 @@ var fs=require('fs');
 var path=require('path');
 function funcCount(filePath){
 return new Promise((res,rej)=>{
-fs.readFile(filePath,'utf-8',(err,data)=>{
+fs.readFile(filePath,(err,data)=>{
 if(err){
     rej("Error reading file");
 }
