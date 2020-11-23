@@ -9,7 +9,7 @@ if(err){
 }
 else{
 var data1=data.toString();
-var  varCount=0;
+var varCount=0;
 var functionCount=0;
 var cont=data1.split(' '); 
 for(var i=0;i<cont.length;i++){
