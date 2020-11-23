@@ -13,7 +13,7 @@ var countObj={};
 var contents=data;
 for(var content in contents){
     
-if((content==='function' )||(content===' =>')){
+if((content==='function' )||(content===')=>')){
     functionCount=functionCount+1;
 }
 else if(content==='let'||content==='var'||content==='const'){
