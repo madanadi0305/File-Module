@@ -11,6 +11,9 @@ if(error){
 var fileAtIndexObj={};
 var indexFilePath;
 var pos;
+if(files.length===0){
+throw new Error('files is empty cannot insert data in object');
+}
 for(var i=0;i<files.length;i++){
 if(i===index){
 pos=i;
