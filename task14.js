@@ -13,15 +13,15 @@ var countObj={};
 var contents=data;
 for(var i=0;i<contents.length;i++){
     var content=contents[i];
-if((content===' ) {' )||(content===' =>')){
+if((content==='function' )||(content===' =>')){
     functionCount=functionCount+1;
 }
 else if(content==='let'||content==='var'||content==='const'){
     variableCount=variableCount+1;
 }
 }
-countObj.functionCount=functionCount;
-countObj.variableCount=variableCount;
+countObj.functionCount=parseInt(functionCount);
+countObj.variableCount=parseInt(variableCount);
 res(countObj);
 }
 
