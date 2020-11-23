@@ -7,8 +7,8 @@ if(err){
     rej("Error reading file");
 }
 else{
-var functionCount=0;
-var variableCount=0;    
+var functionCount;
+var variableCount;    
 var countObj={};
 var contents=data;
 for(var content in contents){
