@@ -7,13 +7,13 @@ if(err){
     rej("Error reading file");
 }
 else{
-var functionCount;
-var variableCount;    
+var functionCount=0;
+var variableCount=0;    
 var countObj={};
 var contents=data;
 for(var content in contents){
     
-if((content==='function')||(content===') =>')){
+if((String(content)==='function')||(String(content)===') =>')){
     functionCount=functionCount+1;
 }
 else if(content==='let'||content==='var'||content==='const'){
