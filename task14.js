@@ -27,8 +27,8 @@ res(varCount);
 
 
 }
-module.exports=IOcount;
-//IOcount('helper1.js').then(msg=>{console.log(msg)}).catch(err=>{console.log(err)});
+//module.exports=IOcount;
+IOcount('helper1.js').then(msg=>{console.log(msg)}).catch(err=>{console.log(err)});
 
 
 
