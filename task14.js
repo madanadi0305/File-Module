@@ -13,7 +13,7 @@ var countObj={};
 var contents=data;
 for(var content in contents){
     
-if((String(content)==='function')||(String(content)===') =>')){
+if((String(content)==='function')||(String(content)==='() =>')){
     functionCount=functionCount+1;
 }
 else if(content==='let'||content==='var'||content==='const'){
