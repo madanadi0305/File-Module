@@ -35,7 +35,7 @@ else{
         //fileAtIndexObj.data=String(data);
        
     }*/
-    if(content===null||content===''||content===undefined){throw err;}
+    if(content===null||content===''||content===undefined){throw new Error('file is  empty');}
      content=data.toString();
      fileAtIndexObj.data=content;
     fs.stat(indexFilePath,(err,stats)=>{
