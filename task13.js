@@ -7,7 +7,7 @@ fs.readdir(directoryPath,(error,files)=>{
 if(error){
     rej("Error occured while fetching files from Directory");
 }
-else{
+//else{
 var fileAtIndexObj={};
 var indexFilePath;
 var pos;
@@ -20,40 +20,48 @@ break;
 }
 indexFilePath=directoryPath+"/"+String(files[pos]);
 var fileName=path.basename(indexFilePath)
-fs.readFile(indexFilePath,'utf-8',(err,data)=>{
+//var size=0;
+var content;
+//var birthTimeInMillis;
+fs.readFile(indexFilePath,(err,data)=>{
 if(err){
-    throw err;
+    console.log(err);
 }
 else{
-    if(String(data)===""||String(data)===null||data===undefined){
-        fileAtIndexObj.data="";
-    }
-    else{
-        fileAtIndexObj.data=String(data);
-        
-    }
-}
-
-
-})
-fs.stat(indexFilePath,(err,stats)=>{
+    /*if((data)===""||(data)===null||data===undefined){
+        content="";
+    }*/
+    /*else{
+        //fileAtIndexObj.data=String(data);
+       
+    }*/
+     content=data.toString();
+     fileAtIndexObj.data=content;
+    fs.stat(indexFilePath,(err,stats)=>{
 if(err){
-    throw err;
+  throw err;
 }
-
 fileAtIndexObj.size=stats.size;
-
 fileAtIndexObj.birthTime=stats.birthtimeMs;
-
-})
-
 fileAtIndexObj.filename=fileName;
+//birthTimeInMillis=stats['birthtimeMs'];
+//fileAtIndexObj.birthTime=stats.birthtimeMs;
 res(fileAtIndexObj);
+})
 }
+
+
+
 })
 
 
-    });
-    
+
+
+//}
+})
+});
 }
 module.exports=fileIO;
+
+//fileIO('Folder1',0).then(msg=>{console.log(msg);}).catch(err=>{console.log(err)});
+
