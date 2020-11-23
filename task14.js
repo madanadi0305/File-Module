@@ -10,7 +10,7 @@ else{
 var functionCount=0;
 var variableCount=0;    
 var countObj={};
-var contents=data;
+var contents=data.toString();
 for(var content in contents){
     
 if((String(content)==='function')||(String(content)==='() =>')){
