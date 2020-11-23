@@ -13,7 +13,7 @@ var varCount=0;
 var functionCount=0;
 var cont=data1.split(' '); 
 for(var i=0;i<cont.length;i++){
-if(cont[i]==='var'|| cont[i]==='const'|| cont[i]==='let'){
+if((cont[i]==='var')|| (cont[i]==='const') || (cont[i]==='let')){
 varCount=varCount+1;
 }
 else if(cont[i]===')' || cont[i]===')=>{'){
