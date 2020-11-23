@@ -1,4 +1,4 @@
-const kofinity = () => {
+const kofinity=()=> {
   var a = 10;
   const b = "Mayank";
   const c = "Banga";
@@ -7,12 +7,12 @@ const kofinity = () => {
   var f = 20;
 };
 
-function displaySum() {
+function displaySum(){
   let sum = kofinity().a + kofinity().b;
   console.log(sum);
 }
 
-const stringAdd = () => {
+const stringAdd=()=>{
   let stringAdd =
     konfinity().b +
     " " +
