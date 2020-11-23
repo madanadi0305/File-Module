@@ -2,6 +2,8 @@ const fs=require('fs');
 const path=require('path');
 function IOcount(filePath){
 var varCount=0;
+var functionCount=0;
+var countObj={};
 return new Promise((res,rej)=>{
 fs.readFile(filePath,(err,data)=>{
 if(err){
@@ -18,6 +20,8 @@ if((contents1[i]==='let') || (contents1[i]==='var')||(contents1[i]==='const'))
   varCount=varCount+1;
 }
 }
+countObj.functionCount=functionCount;
+countObj.variableCount=variableCount;
 res(varCount);
 
 }
