@@ -11,8 +11,8 @@ var functionCount=0;
 var variableCount=0;    
 var countObj={};
 var contents=data;
-for(var i=0;i<contents.length;i++){
-    var content=contents[i];
+for(var content in contents){
+    
 if((content==='function' )||(content===' =>')){
     functionCount=functionCount+1;
 }
