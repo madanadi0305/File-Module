@@ -22,7 +22,7 @@ if((contents1[i]==='let') || (contents1[i]==='var')||(contents1[i]==='const'))
 }
 countObj.functionCount=functionCount;
 countObj.variableCount=variableCount;
-res(varCount);
+res(countObj);
 
 }
 })
