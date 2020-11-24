@@ -16,15 +16,7 @@ else{
 
 })
 );
-/*fs.copyFile(sourceFile,destinationFile,err=>{
-if(err){
-  throw err;
-}
-else{
-  res("Content copied successfully");
-}
 
-})*/
 
 
 });
