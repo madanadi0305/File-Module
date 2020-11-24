@@ -8,7 +8,7 @@ return new Promise((res,rej)=>{
 checkExistence(destinationFile).then(msg=>{rej("cannot copy data : File exists")}).catch(
 fs.copyFile(sourceFile,destinationFile,err=>{
 if(err){
-  throw err;
+  rej(err);
 }
 else{
   res("Content copied successfully");
