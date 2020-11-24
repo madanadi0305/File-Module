@@ -5,7 +5,7 @@ function copyFiles(sourcePath,destinationPath){
 return new Promise((resolve,reject)=>{
 four(destinationPath).then(
     //if destination file exists
- reject("cannot copy data : File exists")   
+ reject("File exists")   
 ).catch(
 //not exists create one
 fs.copyFile(sourcePath,destinationPath,err=>{
