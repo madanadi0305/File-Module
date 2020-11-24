@@ -1,28 +1,35 @@
-var fs=require('fs');
-var path=require('path');
-var four=require('./task04');
-function copyFiles(sourcePath,destinationPath){
-return new Promise((resolve,reject)=>{
-four(destinationPath).then(
-    //if destination file exists
- reject("File exists")   
-).catch(
-//not exists create one
-fs.copyFile(sourcePath,destinationPath,err=>{
+const fs=require('fs');
+const path=require('path');
+var checkExistence=require('./task04.js');
+
+function copyContent(sourceFile,destinationFile){
+var msg="cannot copy data : File exists";
+return new Promise((res,rej)=>{
+checkExistence(destinationFile).then(msg=>{rej("cannot copy data : File exists")}).catch(
+fs.copyFile(sourceFile,destinationFile,err=>{
 if(err){
-    //reject(err);
-    throw err;
+  throw err;
 }
 else{
-    resolve("Content copied successfully");
+  res("Content copied successfully");
 }
-})
 
+})
 );
+/*fs.copyFile(sourceFile,destinationFile,err=>{
+if(err){
+  throw err;
+}
+else{
+  res("Content copied successfully");
+}
+
+})*/
 
 
 });
 
 
 }
-module.exports=copyFiles;
+module.exports=copyContent;
+//copyContent('Folder1/File1.txt','Folder1/File6.txt').then(msg=>{console.log(msg)}).catch(err=>{console.log(err)});

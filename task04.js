@@ -1,4 +1,4 @@
-var fs=require('fs');
+const fs=require('fs');
 //var path=require('path');
 function checkFileExists(pathFile){
  //var finalPath=path.dirname(pathFile);   
@@ -15,3 +15,4 @@ return new Promise((res,rej)=>{
 }
 //checkFileExists('help1.txt').then(res=>{console.log(res);}).catch(err=>{console.log(err.message)});
 module.exports=checkFileExists;
+//checkFileExists('Folder1/File5.txt').then(res=>{console.log(res);}).catch(err=>{console.log(err.message)});
