@@ -9,9 +9,7 @@ checkExist(filePath).then(msg=>
 if(!err){
 res("Data appended successfully");
 }
-else{
-  rej(err);  
-  }
+else return 0;
  })
  }).catch(err=>
 {rej("Cannot append data because : File does not exists");
