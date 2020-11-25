@@ -16,7 +16,10 @@ else{
  })
  }   
 ).catch(err=>
-{rej("Cannot append data because : File does not exists");}
+{//rej("Cannot append data because : File does not exists");
+console.log(err);
+}
+
 )
 
 
