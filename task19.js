@@ -7,7 +7,7 @@ taskFour(destinationFile).then((res)=>
 {rej("cannot copy data : File exists");}
 
 ).catch((err)=>{
-fs.copyFile(sourceFile,destinationFile,(err)=>{
+/*fs.copyFile(sourceFile,destinationFile,(err)=>{
 if(!err){
  res("Content copied successfully");
 
@@ -16,11 +16,19 @@ else{
    
 rej('ERROR WHILE COPYING INTO THE FILE');
 }
-})
+})*/
 
-
+console.log(err);
 });
+fs.copyFile(sourceFile,destinationFile,err=>{
+if(err){
+rej(err);
 
+}
+else{
+    res("Content copied successfully");
+}
+})
 
 });
 
