@@ -16,7 +16,7 @@ taskTwentyOne(pathToDelete).then(resp=>{
     
 }).catch(err=>{rej(err)})
 //deleteDirectory
-taskTwentyTwo.then(
+taskTwentyTwo(pathToDelete).then(
  (result)=>{res("New directory created : Directory removed");}
 )
 });
