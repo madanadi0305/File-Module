@@ -4,7 +4,7 @@ const checkExist=require('./task04.js');
 function appendContent(filePath,content){
  var data=String(content);   
 return new Promise((res,rej)=>{
-checkExist(filePath).then(
+checkExist(filePath).then(msg=>
  fs.appendFile(filePath,data,err=>{
 if(err){
 rej(err);
