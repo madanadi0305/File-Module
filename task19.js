@@ -1,7 +1,7 @@
 const fs=require('fs');
 const path=require('path');
 const taskFour=require("./task04");
-function copyContent(sourceFile,destinationFile){
+async function copyContent(sourceFile,destinationFile){
 return new Promise((res,rej)=>{
 taskFour(destinationFile).then((res)=>
 {rej("cannot copy data : File exists");}
