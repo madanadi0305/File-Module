@@ -1,6 +1,6 @@
 const fs=require('fs');
 const checkExist=require('./task04');
-function appendContent(file,content){
+async function appendContent(file,content){
 return new Promise((resolve,reject)=>{
 checkExist(file).then((res)=>{
 fs.appendFile(file,content,err=>{
