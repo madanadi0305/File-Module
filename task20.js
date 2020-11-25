@@ -1,4 +1,4 @@
-/*const fs=require('fs');
+const fs=require('fs');
 const checkExist=require('./task04');
 function appendContent(file,content){
 return new Promise((resolve,reject)=>{
@@ -10,14 +10,14 @@ resolve("Data appended successfully");
     //throw (err);
 }
 else{
-    reject(err);
+    reject("Cannot append data because : File does not exists");
     }
 
 });
 
 })
 .catch((err)=>{
-    reject("Cannot append data because : File does not exists");
+    console.log(err);
 
 });
 
@@ -26,10 +26,10 @@ else{
 
 
 }
-module.exports=appendContent;*/
+module.exports=appendContent;
 
 
-const taskFour = require('./task04');
+/*const taskFour = require('./task04');
 const fs = require('fs');
 
 function main(filePath, data) {
@@ -47,4 +47,4 @@ function main(filePath, data) {
   });
 }
 
-module.exports = main;
+module.exports = main;*/
