@@ -1,25 +1,20 @@
 const fs=require('fs');
-const path=require('path');
-const checkExistFile=require('./task04.js');
-function copyContents(source,destination){
+const four=require('./task04');
+function copyContent(sourceFile,destinationFile){
 return new Promise((res,rej)=>{
-checkExistFile(destination).then(
-  rej("cannot copy data : File exists")
-).catch(err=>
-fs.copyFile(source,destination,err=>{
+four(destinationFile).then((resp)=>
+{fs.copyFile(sourceFile,destinationFile,err=>{
 if(err){
-  rej(err);
+rej("cannot copy data : File exists");
 
 }
-else{
-  res("Content copied successfully");
-}
+res("Content copied successfully");
 })
+}).catch((err)=>console.log(err));
 
-);
 
 });
 
 
 }
-module.exports=copyContents;
+module.exports=copyContent;
