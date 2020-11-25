@@ -12,9 +12,9 @@ if(err){
 rej('ERROR WHILE COPYING INTO THE FILE');
 
 }
-//else{
+else{
     res("Content copied successfully");
-//}
+}
 })
 
 
