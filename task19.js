@@ -5,33 +5,24 @@ var checkExistence=require('./task04.js');
 function copyContent(sourceFile,destinationFile){
 //var msg="cannot copy data : File exists";
 return new Promise((res,rej)=>{
-checkExistence(destinationFile).then(msg=>{rej("cannot copy data : File exists")}).catch(
-  
-  
-  err=>{console.log(err)}
-
-);
+checkExistence(destinationFile).then(
+  //promise is resoolved for file existence according to task04 so we will reject with a message
 fs.copyFile(sourceFile,destinationFile,err=>{
 if(err){
-  rej(err);
+rej("cannot copy data : File exists");
+
 }
+
 else{
   res("Content copied successfully");
 }
 
 })
 
+).catch(err=>{console.log(err)});
 
 
-/*fs.copyFile(sourceFile,destinationFile,err=>{
-if(err){
-  throw err;
-}
-else{
-  res("Content copied successfully");
-}
 
-})*/
 
 
 });
