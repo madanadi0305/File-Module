@@ -2,7 +2,7 @@ const fs=require('fs');
 const checkExist=require('./task04');
 function appendContent(file,content){
 return new Promise((resolve,reject)=>{
-checkExist(file).then(
+checkExist(file).then((res)=>{
 fs.appendFile(file,content,err=>{
 if(!err){
 resolve("Data appended successfully");
@@ -13,11 +13,11 @@ else{
     }
 
 })
-)
-.catch(
+})
+.catch((err)=>
     //console.log(err);
- reject("Cannot append data because : File does not exists"));
-
+ {reject("Cannot append data because : File does not exists")
+ })
 
 });
 
