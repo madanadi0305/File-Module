@@ -5,7 +5,7 @@ return new Promise((resolve,reject)=>{
 checkExist(file).then(
 fs.appendFile(file,content,err=>{
 if(err){
-    reject(err);
+    throw (err);
 }
 resolve("Data appended successfully");
 })
