@@ -8,12 +8,13 @@ taskFour(destinationFile).then((res)=>
 
 ).catch((err)=>{
 fs.copyFile(sourceFile,destinationFile,(err)=>{
-if(err){
-rej('ERROR WHILE COPYING INTO THE FILE');
+if(!err){
+ res("Content copied successfully");
 
 }
 else{
-    res("Content copied successfully");
+   
+rej('ERROR WHILE COPYING INTO THE FILE');
 }
 })
 
