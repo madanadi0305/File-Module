@@ -4,10 +4,11 @@ function appendContent(file,content){
 return new Promise((resolve,reject)=>{
 checkExist(file).then(result=>{
 fs.appendFile(file,content,err=>{
-if(err){
-    throw (err);
+if(!err){
+resolve("Data appended successfully");
+    //throw (err);
 }
-else{resolve("Data appended successfully");}
+else{reject(err);}
 
 })
 
