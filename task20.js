@@ -11,7 +11,7 @@ res("Data appended successfully");
 }
 else{
     
-    rej(err);
+    rej("Cannot append data because : File does not exists");
 }
  })
  }   
