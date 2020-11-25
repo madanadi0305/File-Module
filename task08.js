@@ -17,9 +17,9 @@ if(fileName.lastIndexOf('.')!==-1){
     fileArray.push(fileName);
 }
 else{
-fileArray.push("[");
+//fileArray.push("[");
 //create a new array and push the callback function in it
-arrayOfFiles(pathElem);
+fileArray.push(arrayOfFiles(pathElem));
 //fileArray.push("]");
 }
 
