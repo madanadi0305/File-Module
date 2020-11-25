@@ -5,7 +5,7 @@ function copyContents(source,destination){
 return new Promise((res,rej)=>{
 checkExistFile(destination).then(
   rej("cannot copy data : File exists")
-).catch(
+).catch(err=>
 fs.copyFile(source,destination,err=>{
 if(err){
   rej(err);
