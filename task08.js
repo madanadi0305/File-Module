@@ -16,8 +16,9 @@ var fileName=path.basename(pathElem);
 if(fileName.lastIndexOf('.')!==-1){
     fileArray.push(fileName);
 }
+fileArray.push(pathElem);
 //create a new array and push the callback function in it
-fileArray=arrayOfFiles(pathElem);
+arrayOfFiles(pathElem);
 }
 
 resolve(fileArray);
