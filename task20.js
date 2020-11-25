@@ -13,7 +13,7 @@ else{
     res("Data appended successfully");
 }
  })   
-).catch(
+).catch(err=>
 rej("Cannot append data because : File does not exists")
 )
 
