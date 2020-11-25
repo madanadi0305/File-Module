@@ -10,17 +10,15 @@ if(!err){
 res("Data appended successfully");
 }
 else{
-    
-    rej("Cannot append data because : File does not exists");
-}
+  rej(err);  
+  }
  })
- }   
-).catch(err=>
-{//rej("Cannot append data because : File does not exists");
-console.log(err);
+ }).catch(err=>
+{rej("Cannot append data because : File does not exists");
+//console.log(err);
 }
 
-)
+);
 
 
 });
