@@ -27,17 +27,10 @@ var fileName=path.basename(indexFilePath)
 var content;
 //var birthTimeInMillis;
 fs.readFile(indexFilePath,(err,data)=>{
-if(err){
+/*if(err){
     console.log(err);
-}
-else{
-    /*if((data)===""||(data)===null||data===undefined){
-        content="";
-    }*/
-    /*else{
-        //fileAtIndexObj.data=String(data);
-       
-    }*/
+}*/
+
     
     content=data.toString();
      fileAtIndexObj.data=content;
@@ -53,7 +46,7 @@ fileAtIndexObj.filename=fileName;
 //fileAtIndexObj.birthTime=stats.birthtimeMs;
 res(fileAtIndexObj);
 })
-}
+//}
 
 
 
