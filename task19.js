@@ -8,10 +8,10 @@ taskFour(destinationFile).then(()=>
 
 ).catch(()=>{
 fs.copyFile(sourceFile,destinationFile,(err)=>{
-/*if(err){
-rej(err);
+if(err){
+rej('ERROR WHILE COPYING INTO THE FILE');
 
-}*/
+}
 //else{
     res("Content copied successfully");
 //}
