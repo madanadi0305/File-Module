@@ -1,5 +1,5 @@
 const fs=require('fs');
-const path=require('path');
+//const path=require('path');
 const checkExist=require('./task04.js');
 function appendContent(filePath,content){
  //var data=String(content);   
@@ -9,7 +9,7 @@ checkExist(filePath).then(msg=>
 if(!err){
 res("Data appended successfully");
 }
-//else return 0;
+else { rej(new Error('Cannot append data'))};
  })
  }).catch(err=>
 {rej("Cannot append data because : File does not exists");
