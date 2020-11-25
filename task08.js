@@ -20,8 +20,9 @@ else{
 fileArray.push("[");
 //create a new array and push the callback function in it
 arrayOfFiles(pathElem);
-fileArray.push("]");
+//fileArray.push("]");
 }
+
 }
 
 resolve(fileArray);
