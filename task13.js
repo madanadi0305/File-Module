@@ -11,9 +11,6 @@ if(error){
 var fileAtIndexObj={};
 var indexFilePath;
 var pos;
-/*if(files.length===0){
-throw new Error('files is empty cannot insert data in object');
-}*/
 for(var i=0;i<files.length;i++){
 if(i===index){
 pos=i;
@@ -26,7 +23,7 @@ var fileName=path.basename(indexFilePath)
 //var size=0;
 var content;
 //var birthTimeInMillis;
-fs.readFile(indexFilePath,(err,data)=>{
+fs.readFile(indexFilePath,'utf-8',(err,data)=>{
 /*if(err){
     console.log(err);
 }*/
