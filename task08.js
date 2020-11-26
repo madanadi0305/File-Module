@@ -1,35 +1,37 @@
-var fs=require('fs');
-var path=require('path');
-
-function arrayOfFiles(pathToDirectory){
-var fileArray=[];
-var dirPath=path.join(__dirname,pathToDirectory);
-return new Promise((resolve,reject)=>{
-fs.readdir(dirPath,(err,files)=>{
+const fs=require('fs');
+const path=require('path');
+const arrayOfFiles=(directoryPath)=>{
+return new Promise((res,rej)=>{
+ fs.readdir(directoryPath,async(err,files)=>{
 if(err){
-    reject("Error occured while reading directory");
-}
-
-for(var i=0;i<files.length;i++){
-var pathElem=dirPath+"/"+String(files[i]);
-var fileName=path.basename(pathElem);
-if(fileName.lastIndexOf('.')!==-1){
-    fileArray.push(fileName);
+  rej("Error occured while reading directory");
 }
 else{
-//fileArray.push("[");
-//create a new array and push the callback function in it
-fileArray.push("["+arrayOfFiles(pathElem)+"]");
-//fileArray.push("]");
+//let subDirCount;
+var fileArray=[];
+for(var i=0;i<files.length;i++){
+if(files[i].includes('.')){
+fileArray.push(files[i]);
+
+}
+else{
+
+var subPath=directoryPath+"/"+String(files[i]);
+let subDirectory=await arrayOfFiles(subPath); 
+fileArray.push(subDirectory);
 }
 
 }
 
-resolve(fileArray);
+res(fileArray);
+
+}
 })
 
 
 });
 
-}
+}; 
+
+
 module.exports=arrayOfFiles;
