@@ -1,5 +1,4 @@
 const fs=require('fs');
-const path=require('path');
 function IOCount(filePath){
 var countObj={};
 return new Promise((res,rej)=>{
@@ -13,22 +12,27 @@ var varCount=0;
 var functionCount=0;
 var cont=data1.split(' '); 
 for(var i=0;i<cont.length;i++){
-if((cont[i]==='var')|| (cont[i]==='const') || ((cont[i]==='let')&&(cont[i]!==''))){
+var content=cont[i];
+if(content.includes('const')||content.includes('var')||content.includes('let')){
 varCount=varCount+1;
 }
-else if(cont[i]===')' || cont[i]===')=>{'){
+
+else if(content.includes('function')|| content.includes('=>')){
 functionCount=functionCount+1;
+console.log(content);
 }
 }
 countObj.functionCount=functionCount;
 countObj.variableCount=varCount;
 res(countObj);
-}
-})
 
+}
+
+   
+})
 });
 
 
 }
-
 module.exports=IOCount;
+//IOCount('Folder1/helper1.js').then(res=>{console.log(res)}).catch(err=>{console.log(err)});
