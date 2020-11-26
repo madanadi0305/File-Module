@@ -33,5 +33,4 @@ res(fileArray);
 
 }; 
 
-
 module.exports=arrayOfFiles;
