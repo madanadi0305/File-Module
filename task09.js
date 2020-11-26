@@ -29,7 +29,7 @@ countFiles=countFiles+subDirectory.countFiles;
 }
 }
 countObj.countDir=countDir;
-countObj.countFile=countFile;
+countObj.countFile=countFiles;
 res(countObj);
 }
 
