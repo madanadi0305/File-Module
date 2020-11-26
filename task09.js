@@ -22,8 +22,11 @@ if(pathElem.lastIndexOf('.')!==-1){
 //count(directoryPath+"/"+String(pathElem));
 }
 countDir=countDir+1;
-count(directoryPath+"/"+String(pathElem));
-countObj.countDir=parseInt(countDir);
+var subpath=directoryPath+"/"+String(pathElem);
+let subDirectory=count(subpath);
+countDir=countDir+subDirectory.countDir;
+countFile=countFile+subDirectory.countFile;
+countObj.countDir=countDir;
 countObj.countFile=countFile;
 res(countObj);
 }
