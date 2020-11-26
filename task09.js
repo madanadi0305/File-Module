@@ -2,7 +2,7 @@ var fs=require('fs');
 var path=require('path');
 function count(directoryPath){
 return new Promise((res,rej)=>{
-fs.readdir(directoryPath,(err,files)=>{
+fs.readdir(directoryPath,async(err,files)=>{
 if(err){
 rej("Error occured while traversing directory");
 
@@ -23,7 +23,7 @@ if(pathElem.lastIndexOf('.')!==-1){
 }
 countDir=countDir+1;
 var subpath=directoryPath+"/"+String(pathElem);
-let subDirectory=count(subpath);
+let subDirectory=await count(subpath);
 countDir=countDir+subDirectory.countDir;
 countFile=countFile+subDirectory.countFile;
 countObj.countDir=countDir;
