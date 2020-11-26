@@ -13,6 +13,5 @@ return new Promise((res,rej)=>{
  });   
 });  
 }
-
-//checkFileExists('help1.txt').then(res=>{console.log(res);}).catch(err=>{console.log(err.message)});
+checkFileExists('help1.txt').then(res=>{console.log(res);}).catch(err=>{console.log(err.message)});
 module.exports=checkFileExists;
