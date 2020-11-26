@@ -39,6 +39,4 @@ res(countObj);
 
 }; 
 
-//countDirsAndFiles('Folder1').then(res=>{console.log(res)}).catch(err=>{console.log(err)});
-
 module.exports=countDirsAndFiles;
