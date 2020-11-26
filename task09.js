@@ -10,22 +10,24 @@ rej("Error occured while traversing directory");
 else{
 var countObj={};
 var countDir=0;
-var countSubDir=0;
-var countFile=0;
+
+var countFiles=0;
 for(var i=0;i<files.length;i++){
-//var pathElem=directoryPath+"/"+String(files[i]);
+
 var pathElem=files[i];
 if(pathElem.lastIndexOf('.')!==-1){
-    countFile=countFile+1;
+    countFiles=countFiles+1;
 }
-//countSubDir=countSubDir+1;
-//count(directoryPath+"/"+String(pathElem));
-}
+
+
+else{
 countDir=countDir+1;
 var subpath=directoryPath+"/"+String(pathElem);
 let subDirectory=await count(subpath);
 countDir=countDir+subDirectory.countDir;
-countFile=countFile+subDirectory.countFile;
+countFiles=countFiles+subDirectory.countFiles;
+}
+}
 countObj.countDir=countDir;
 countObj.countFile=countFile;
 res(countObj);
