@@ -1,42 +1,44 @@
-var fs=require('fs');
-var path=require('path');
-function count(directoryPath){
+const fs=require('fs');
+const path=require('path');
+const countDirsAndFiles=(directoryPath)=>{
 return new Promise((res,rej)=>{
-fs.readdir(directoryPath,async(err,files)=>{
+ fs.readdir(directoryPath,async(err,files)=>{
 if(err){
-rej("Error occured while traversing directory");
-
+  rej("Error occured while traversing directory");
 }
 else{
+//let subDirCount;
 var countObj={};
-var countDir=0;
-
 var countFiles=0;
+var countDir=0;
 for(var i=0;i<files.length;i++){
+if(files[i].includes('.')){
+countFiles=countFiles+1;
 
-var pathElem=files[i];
-if(pathElem.lastIndexOf('.')!==-1){
-    countFiles=countFiles+1;
 }
-
-
 else{
 countDir=countDir+1;
-var subpath=directoryPath+"/"+String(pathElem);
-let subDirectory=await count(subpath);
-countDir=countDir+subDirectory.countDir;
-countFiles=countFiles+subDirectory.countFiles;
+var subPath=directoryPath+"/"+String(files[i]);
+
+let subDirCount=await countDirsAndFiles(subPath);
+countFiles=countFiles+(subDirCount.countFile);
+countDir=countDir+subDirCount.countDir;
+
 }
+
 }
 countObj.countDir=countDir;
 countObj.countFile=countFiles;
 res(countObj);
-}
 
+}
 })
 
 
 });
 
-}
-module.exports=count;
+}; 
+
+//countDirsAndFiles('Folder1').then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+module.exports=countDirsAndFiles;
