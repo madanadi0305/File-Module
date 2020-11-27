@@ -1,25 +1,21 @@
 var fs=require('fs');
-var task04=require('./task04');
+var path=require('path');
+var checkExistence=require('./task04.js');
 function deleteDirectory(pathToDirectory){
 return new Promise((res,rej)=>{
-fs.rmdir(pathToDirectory,error=>{
-//var checkExist=task04.checkFileExists(pathToDirectory);    
-if(error){
-//if(checkExist===true){    
-rej('cannot remove directory because : File does not exists')
-//}
-}
-else{
-res('File exists : Directory removed');
-
-}
-
-});
-
+checkExistence(pathToDirectory).then(
+    fs.rmdir(pathToDirectory,err=>{
+        if(err)
+        {rej("cannot remove directory because : File does not exists")
+            //console.log(err);
+           // return new Error(err);
+        }
+        res("File exists : Directory removed");
+        })).catch(err=>{console.log(err)}
+           // rej("cannot remove directory because : File does not exists")
+            );
 
 });
-
-
 
 }
 
