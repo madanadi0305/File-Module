@@ -216,7 +216,7 @@ Test09:
   script:
     - git config --global user.email "jindal.swapnil2@gmail.com"
     - git config --global user.name "Swapnil"
-    - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+  #  - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
     - npm install
     - npm run test09
   only:
@@ -336,7 +336,7 @@ Test14:
   script:
     - git config --global user.email "jindal.swapnil2@gmail.com"
     - git config --global user.name "Swapnil"
-    - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
+    # - git subtree pull --prefix=specs/ https://workspace.konfinity.com/swapnil/fs-module-specs.git master -m "done"
     - npm install
     - npm run test14
   only:
